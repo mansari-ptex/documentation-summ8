@@ -1,0 +1,14 @@
+To compare Summs times to TimeLine times there's a fairly limiting process.
+
+1. In Summs make a Part with ONE knife ONLY.
+2. Set the Material Quality and Area Coefficients to 100 in both systems
+3. Look at the Summs Part Allowance Sample Size result.
+4. Divide the result by 2 (where MadeInPairs is true).
+5. Divide by 1.1 (because this is what TimeLine multiplies by to guess at AdjAlw).
+6. Divide by Freq.
+7. Use the Manual Adjustment Factor and set to 0.
+8. Use the number you calculate as NettArea for TimeLine. NOTE: Don't forget that the NettArea must be entered in SQUARE FEET
+
+It is not necessary to do anything with Pieces.
+
+For the element CUT47 - The frequency may not match between the systems as the calculation is based on the REAL Nett Area of the knife in Summs whereas the 'Nett Area' of the TimeLine knife has been calculated as per above. The 2 numbers will be very different.

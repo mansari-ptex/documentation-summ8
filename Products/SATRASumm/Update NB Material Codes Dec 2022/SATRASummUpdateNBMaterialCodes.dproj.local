@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/12/13 11:07:02.000.145,C:\Repositories\Source XE5\Products\SATRASumm\Update NB Material Data Dec 2022\SATRASummUpgrade80to81.dproj=C:\Repositories\Source XE5\Products\SATRASumm\Update NB Material Data Dec 2022\SATRASummUpdateNBMaterialCodes.dproj</Transaction>
+    <Transaction>2022/12/13 11:40:14.000.855,C:\Repositories\Source XE5\Products\SATRASumm\System 8.1.0.0\Interlocking\Expansion.pas=</Transaction>
+    <Transaction>2022/12/13 11:40:14.000.821,C:\Repositories\Source XE5\Products\SATRASumm\System 8.1.0.0\Interlocking\ConvexHull.pas=</Transaction>
+    <Transaction>2022/12/13 11:40:14.000.951,C:\Repositories\Source XE5\Products\SATRASumm\System 8.1.0.0\Interlocking\Interlocking.pas=</Transaction>
+    <Transaction>2022/12/13 11:40:14.000.978,C:\Repositories\Source XE5\Products\SATRASumm\System 8.1.0.0\Interlocking\PolygonOverlaps.pas=</Transaction>
+    <Transaction>2022/12/13 11:40:14.000.872,C:\Repositories\Source XE5\Products\SATRASumm\System 8.1.0.0\Interlocking\FastGEO.pas=</Transaction>
+    <Transaction>2022/12/13 11:40:14.000.750,C:\Repositories\Source XE5\Products\SATRASumm\System 8.1.0.0\Interlocking\Const_Interlocking.pas=</Transaction>
+    <Transaction>2022/12/13 11:40:14.000.838,C:\Repositories\Source XE5\Products\SATRASumm\System 8.1.0.0\Interlocking\Edges.pas=</Transaction>
+    <Transaction>2022/12/13 11:40:14.000.889,C:\Repositories\Source XE5\Products\SATRASumm\System 8.1.0.0\Interlocking\General_Interlocking.pas=</Transaction>
+    <Transaction>2022/12/13 11:40:25.000.602,C:\Repositories\Source XE5\Products\SATRASumm\System 8.1.0.0\KnifeNettArea.pas=</Transaction>
+  </Transactions>
+</BorlandProject>

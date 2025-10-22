@@ -1,0 +1,452 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{13598074-6e38-4b8e-95be-1f24234b1c99}</ProjectGuid>
+        <MainSource>Digitiser.dpr</MainSource>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+        <DCC_DependencyCheckOutputName>..\Out\SData6.exe</DCC_DependencyCheckOutputName>
+        <ProjectVersion>15.3</ProjectVersion>
+        <Config Condition="'$(Config)'==''">Release</Config>
+        <FrameworkType>VCL</FrameworkType>
+        <Base>True</Base>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <TargetedPlatforms>3</TargetedPlatforms>
+        <AppType>Application</AppType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
+        <Base_Win64>true</Base_Win64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
+        <Cfg_1_Win32>true</Cfg_1_Win32>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win64)'!=''">
+        <Cfg_1_Win64>true</Cfg_1_Win64>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
+        <Cfg_2_Win32>true</Cfg_2_Win32>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win64)'!=''">
+        <Cfg_2_Win64>true</Cfg_2_Win64>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <Manifest_File>None</Manifest_File>
+        <Icon_MainIcon>$(BDS)\bin\delphi_PROJECTICON.ico</Icon_MainIcon>
+        <DCC_RangeChecking>true</DCC_RangeChecking>
+        <VerInfo_Build>999</VerInfo_Build>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;Winapi;FMXTee.Editor;Bde;Xml.Win;VCLTee;System.Win;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_Release>999</VerInfo_Release>
+        <VerInfo_Locale>2057</VerInfo_Locale>
+        <VerInfo_Keys>CompanyName=SATRA;FileDescription=Digitiser;FileVersion=1.0.999.999;InternalName=Digitiser;LegalCopyright=;LegalTrademarks=;OriginalFilename=Digitiser;ProductName=Digitiser;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <DCC_UsePackage>rtl;vcl;vclx;vclactnband;xmlrtl;dbrtl;vcldb;vcldbx;bdertl;dsnap;dsnapcon;vclib;ibxpress;adortl;IndyCore;IndySystem;IndyProtocols;inet;intrawebdb_100_120;Intraweb_100_120;VclSmp;vclie;websnap;webdsnap;inetdbbde;inetdbxpress;soaprtl;vclribbon;Rave76VCL;DbxCommonDriver;DbxClientDriver;DBXInterBaseDriver;DBXMySQLDriver;dbexpress;dbxcds;dclEGrid50;dagStd120;taoStd120;CiaPortD9;asgd2009;asgxlsd2009;SATRA;QR5Run_RAD6;adsd2009studio;kdbexp5;DCPdelphi2009;TeeUI812;TeeDB812;Tee812;fs12;frx12;fsDB12;frxDB12;fsBDE12;frxBDE12;fsADO12;frxADO12;fsIBX12;frxIBX12;frxDBX12;frxe12;fsTee12;frxTee12;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_DependencyCheckOutputName>Timeline.exe</DCC_DependencyCheckOutputName>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <VerInfo_Keys>CompanyName=SATRA;FileDescription=TimeLine;FileVersion=1.0.0.0;InternalName=TimeLine;LegalCopyright=;LegalTrademarks=;OriginalFilename=TimeLine;ProductName=TimeLine;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_Build>0</VerInfo_Build>
+        <VerInfo_Release>0</VerInfo_Release>
+        <DCC_ExeOutput>..\Out32</DCC_ExeOutput>
+        <DCC_DcuOutput>..\DCUs32</DCC_DcuOutput>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win64)'!=''">
+        <DCC_ExeOutput>..\Out64</DCC_ExeOutput>
+        <DCC_DcuOutput>..\DCUs64</DCC_DcuOutput>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <DCC_Namespace>Data.Win;Datasnap.Win;Web.Win;Soap.Win;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <DCC_DependencyCheckOutputName>..\Out\Timeline.exe</DCC_DependencyCheckOutputName>
+        <Version>7.0</Version>
+        <DCC_AssertionsAtRuntime>False</DCC_AssertionsAtRuntime>
+        <DCC_WriteableConstants>True</DCC_WriteableConstants>
+        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+        <DCC_ExeOutput>..\Out</DCC_ExeOutput>
+        <DCC_DcuOutput>..\DCUs</DCC_DcuOutput>
+        <DCC_ObjOutput>..\DCUs</DCC_ObjOutput>
+        <DCC_HppOutput>..\DCUs</DCC_HppOutput>
+        <DCC_UnitSearchPath>..\..\Common\Obj;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <DCC_ResourcePath>..\..\Common\Obj;$(DCC_ResourcePath)</DCC_ResourcePath>
+        <DCC_ObjPath>..\..\Common\Obj;$(DCC_ObjPath)</DCC_ObjPath>
+        <DCC_IncludePath>..\..\Common\Obj;$(DCC_IncludePath)</DCC_IncludePath>
+        <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+        <DCC_UNSAFE_TYPE>True</DCC_UNSAFE_TYPE>
+        <DCC_UNSAFE_CODE>True</DCC_UNSAFE_CODE>
+        <DCC_UNSAFE_CAST>True</DCC_UNSAFE_CAST>
+        <DCC_LocalDebugSymbols>False</DCC_LocalDebugSymbols>
+        <DCC_MapFile>3</DCC_MapFile>
+        <DCC_GenerateStackFrames>True</DCC_GenerateStackFrames>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+        <VerInfo_MinorVer>1</VerInfo_MinorVer>
+        <Icon_MainIcon>Images\Digitiser.ico</Icon_MainIcon>
+        <VerInfo_Keys>CompanyName=SATRA;FileDescription=TimeLine;FileVersion=1.1.0.0;InternalName=TimeLine;LegalCopyright=;LegalTrademarks=;OriginalFilename=TimeLine;ProductName=TimeLine;ProductVersion=1.1.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_Build>0</VerInfo_Build>
+        <VerInfo_Release>0</VerInfo_Release>
+        <DCC_ObjOutput>..\DCUs32</DCC_ObjOutput>
+        <DCC_HppOutput>..\DCUs32</DCC_HppOutput>
+        <DCC_ExeOutput>..\Out32</DCC_ExeOutput>
+        <DCC_DcuOutput>..\DCUs32</DCC_DcuOutput>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <DCC_ObjOutput>..\DCUs64</DCC_ObjOutput>
+        <DCC_HppOutput>..\DCUs64</DCC_HppOutput>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <DCC_ExeOutput>..\Out64</DCC_ExeOutput>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <DCC_DcuOutput>..\DCUs64</DCC_DcuOutput>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <DCC_DependencyCheckOutputName>..\Out\Timeline.exe</DCC_DependencyCheckOutputName>
+        <Version>7.0</Version>
+        <DCC_WriteableConstants>True</DCC_WriteableConstants>
+        <DCC_SymbolReferenceInfo>2</DCC_SymbolReferenceInfo>
+        <DCC_ExeOutput>..\Out</DCC_ExeOutput>
+        <DCC_DcuOutput>..\DCUs</DCC_DcuOutput>
+        <DCC_ObjOutput>..\DCUs</DCC_ObjOutput>
+        <DCC_HppOutput>..\DCUs</DCC_HppOutput>
+        <DCC_UnitSearchPath>$(BDS)\lib\Debug;$(BDS)\Lib\Debug\Indy10;$(BDS)\RaveReports\Lib;..\..\Common2011\Obj;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <DCC_ResourcePath>$(BDS)\lib\Debug;$(BDS)\Lib\Debug\Indy10;$(BDS)\RaveReports\Lib;..\..\Common2011\Obj;$(DCC_ResourcePath)</DCC_ResourcePath>
+        <DCC_ObjPath>$(BDS)\lib\Debug;$(BDS)\Lib\Debug\Indy10;$(BDS)\RaveReports\Lib;..\..\Common2011\Obj;$(DCC_ObjPath)</DCC_ObjPath>
+        <DCC_IncludePath>$(BDS)\lib\Debug;$(BDS)\Lib\Debug\Indy10;$(BDS)\RaveReports\Lib;..\..\Common2011\Obj;$(DCC_IncludePath)</DCC_IncludePath>
+        <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+        <DCC_UNSAFE_TYPE>True</DCC_UNSAFE_TYPE>
+        <DCC_UNSAFE_CODE>True</DCC_UNSAFE_CODE>
+        <DCC_UNSAFE_CAST>True</DCC_UNSAFE_CAST>
+        <DCC_Optimize>False</DCC_Optimize>
+        <DCC_MapFile>3</DCC_MapFile>
+        <DCC_GenerateStackFrames>True</DCC_GenerateStackFrames>
+        <DCC_RangeChecking>True</DCC_RangeChecking>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+        <DCC_Define>EUREKALOG;EUREKALOG_VER6;$(DCC_Define)</DCC_Define>
+        <VerInfo_Release>0</VerInfo_Release>
+        <DCC_ObjOutput>..\DCUs32</DCC_ObjOutput>
+        <DCC_HppOutput>..\DCUs32</DCC_HppOutput>
+        <VerInfo_Build>0</VerInfo_Build>
+        <DCC_ExeOutput>..\Out32</DCC_ExeOutput>
+        <DCC_DcuOutput>..\DCUs32</DCC_DcuOutput>
+        <VerInfo_Keys>CompanyName=SATRA;FileDescription=TimeLine;FileVersion=1.0.0.0;InternalName=TimeLine;LegalCopyright=;LegalTrademarks=;OriginalFilename=TimeLine;ProductName=TimeLine;ProductVersion=1.0;Comments=</VerInfo_Keys>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <DCC_ObjOutput>..\DCUs64</DCC_ObjOutput>
+        <DCC_HppOutput>..\DCUs64</DCC_HppOutput>
+        <DCC_ExeOutput>..\Out64</DCC_ExeOutput>
+        <DCC_DcuOutput>..\DCUs64</DCC_DcuOutput>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+    </PropertyGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType>VCLApplication</Borland.ProjectType>
+        <BorlandProject>
+            <Delphi.Personality>
+                <Parameters>
+                    <Parameters Name="UseLauncher">False</Parameters>
+                    <Parameters Name="LoadAllSymbols">True</Parameters>
+                    <Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
+                </Parameters>
+                <VersionInfo>
+                    <VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+                    <VersionInfo Name="AutoIncBuild">False</VersionInfo>
+                    <VersionInfo Name="MajorVer">1</VersionInfo>
+                    <VersionInfo Name="MinorVer">0</VersionInfo>
+                    <VersionInfo Name="Release">0</VersionInfo>
+                    <VersionInfo Name="Build">0</VersionInfo>
+                    <VersionInfo Name="Debug">False</VersionInfo>
+                    <VersionInfo Name="PreRelease">False</VersionInfo>
+                    <VersionInfo Name="Special">False</VersionInfo>
+                    <VersionInfo Name="Private">False</VersionInfo>
+                    <VersionInfo Name="DLL">False</VersionInfo>
+                    <VersionInfo Name="Locale">1033</VersionInfo>
+                    <VersionInfo Name="CodePage">1252</VersionInfo>
+                </VersionInfo>
+                <VersionInfoKeys>
+                    <VersionInfoKeys Name="CompanyName"/>
+                    <VersionInfoKeys Name="FileDescription"/>
+                    <VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys>
+                    <VersionInfoKeys Name="InternalName"/>
+                    <VersionInfoKeys Name="LegalCopyright"/>
+                    <VersionInfoKeys Name="LegalTrademarks"/>
+                    <VersionInfoKeys Name="OriginalFilename"/>
+                    <VersionInfoKeys Name="ProductName"/>
+                    <VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+                    <VersionInfoKeys Name="Comments"/>
+                </VersionInfoKeys>
+                <Source>
+                    <Source Name="MainSource">Digitiser.dpr</Source>
+                </Source>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k190.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp190.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                </Excluded_Packages>
+            </Delphi.Personality>
+            <ModelSupport>False</ModelSupport>
+            <Platforms>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">True</Platform>
+            </Platforms>
+            <Deployment>
+                <DeployFile LocalName="..\Out32\Timeline.rsm" Configuration="Debug" Class="DebugSymbols">
+                    <Platform Name="Win32">
+                        <RemoteName>Timeline.rsm</RemoteName>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\Out32\Timeline.exe" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win32"/>
+                </DeployFile>
+                <DeployClass Required="true" Name="ProjectOutput">
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Required="true" Name="DependencyPackage">
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                        <Extensions>.bpl</Extensions>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DependencyModule">
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                        <Extensions>.dll;.bpl</Extensions>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOSXInfoPList"/>
+                <DeployClass Name="File">
+                    <Platform Name="OSX32">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DebugSymbols">
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DependencyFramework">
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                        <Extensions>.framework</Extensions>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AdditionalDebugSymbols">
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOSXResource">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\Resources</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
+            </Deployment>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <ItemGroup>
+        <DelphiCompile Include="$(MainSource)">
+            <MainSource>MainSource</MainSource>
+        </DelphiCompile>
+        <DCCReference Include="DigitiserMain.pas">
+            <Form>fmDigitiser</Form>
+        </DCCReference>
+        <DCCReference Include="DigitiserAllPatterns.pas">
+            <Form>fmPatterns</Form>
+        </DCCReference>
+        <DCCReference Include="DigitiserCalls.pas">
+            <Form>fmDigitiserCalls</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\Common\PathGeometry.pas"/>
+        <DCCReference Include="..\..\Common\PathGlobals.pas"/>
+        <DCCReference Include="DigitiserPatternName.pas">
+            <Form>fmPatternName</Form>
+        </DCCReference>
+        <DCCReference Include="TABCONLib_TLB.pas"/>
+        <DCCReference Include="..\..\Common\General.pas"/>
+        <DCCReference Include="..\..\Common\OutOfMemory.pas">
+            <Form>fmMemoryError</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\Common\CmnVars.pas"/>
+        <DCCReference Include="..\..\Common\LockedDialog.pas">
+            <Form>fmLockedDialog</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\Common\AccessDenied.pas">
+            <Form>fmAccessDenied</Form>
+        </DCCReference>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <Import Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')" Project="$(BDS)\Bin\CodeGear.Delphi.Targets"/>
+    <Import Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')" Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj"/>
+    <Import Condition="Exists('$(MSBuildProjectName).deployproj')" Project="$(MSBuildProjectName).deployproj"/>
+</Project>
+
+<!-- EurekaLog First Line
+[Exception Log]
+EurekaLog Version=7007
+Activate=0
+AutoCrashOperation=2
+boHandleSafeCallExceptions=1
+boUseMainModuleOptions=1
+CompatibilityMode=1
+csoAllowedRenderMethods=8
+csoDisabledRenderMethods=-2
+csoShowWindowsThreads=1
+DeleteMapAfterCompile=1
+Email Address=""
+Email Object=""
+Encrypt Password=""
+Errors Number=32
+Errors Terminate=3
+Foreground Tab=0
+loCatchLeaks=0
+loEnableMMDebugMode=0
+loFreeAllLeaks=1
+loHideRTLLeaks=0
+loMaxLeaks=1024
+loOnlyUnderIDE=0
+loProcessesSection=1
+mtDialog_ErrorMsgCaption="An error has occurred during program execution.\r\nPlease read the following information for further details."
+mtException_LeakMemoryOverrun="Memory Overrun leak."
+mtException_LeakMultiFree="Multi Free memory leak."
+mtFileCrackedMsg="This file is cracked.\r\nThe application will be closed."
+mtMSDialog_DescriptionCaption="We have created an error report that you can send to us. We will treat this report as confidential and anonymous."
+mtMSDialog_EmailCaption="Email address (optional):"
+mtMSDialog_ErrorMsgCaption="The application has encountered a problem. We are sorry for the inconvenience."
+mtMSDialog_RestartCaption="Restart application."
+mtMSDialog_SeeDetailsCaption="To see what data the error report contains,"
+mtMSDialog_TerminateCaption="Terminate application."
+mtReproduceDialog_Caption="Request"
+mtSend_BugClosedMsg="These BUG is just closed.\r\nContact the program support to obtain an update."
+mtSend_FailureMsg="Sorry, sending the message didn't work."
+mtSend_SuccessMsg="The message was sent successfully."
+mtSendDialog_Caption="Send."
+mtSendDialog_Connected="Connected with server."
+mtSendDialog_Connecting="Connecting with server..."
+mtSendDialog_Login="Login..."
+mtSendDialog_SelectProject="Select project..."
+Output Path=""
+SMTP From="eurekalog@email.com"
+SMTP Host=""
+SMTP UserID=""
+sndAddDateInFileName=0
+sndScreenshot=3
+sndShowSuccessMsg=0
+soActCtlsControlClass=1
+soActCtlsControlText=1
+soActCtlsFormClass=1
+soActCtlsFormText=1
+soAppCompilationDate=1
+soAppName=1
+soAppParameters=1
+soAppStartDate=1
+soAppUpTime=1
+soAppVersionNumber=1
+soCmpDisplayDPI=1
+soCmpDisplayMode=1
+soCmpFreeDisk=1
+soCmpFreeMemory=1
+soCmpName=1
+soCmpPrinter=1
+soCmpProcessor=1
+soCmpSysUpTime=1
+soCmpTotalDisk=1
+soCmpTotalMemory=1
+soCmpVideoCard=1
+soCustomData=1
+soExcCount=1
+soExcDate=1
+soExcModuleName=1
+soExcModuleVersion=1
+soExcNote=1
+soExcStatus=1
+soNetDHCP=1
+soNetDNS1=1
+soNetDNS2=1
+soNetGateway=1
+soNetIP=1
+soNetSubmask=1
+soOSBuildN=1
+soOSCharset=1
+soOSLanguage=1
+soOSType=1
+soOSUpdate=1
+soUserCompany=1
+soUserID=1
+soUserPrivileges=1
+TextsCollection=""
+TrakerUser=""
+WebPort=0
+WebURL=""
+EurekaLog Last Line -->

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2021/11/15 15:28:37.000.613,=C:\Users\ECS\Documents\RAD Studio\Projects\Unit4.pas</Transaction>
+    <Transaction>2021/11/15 15:46:35.000.874,C:\Repositories\Source XE5\Products\SATRASumm\System 8 Test\Unit4.pas=C:\Users\ECS\Documents\RAD Studio\Projects\Unit4.pas</Transaction>
+    <Transaction>2021/11/15 15:46:35.000.874,C:\Repositories\Source XE5\Products\SATRASumm\System 8 Test\Unit4.dfm=C:\Users\ECS\Documents\RAD Studio\Projects\Unit4.dfm</Transaction>
+    <Transaction>2021/11/15 15:46:38.000.406,C:\Repositories\Source XE5\Products\SATRASumm\System 8 Test\Project3.dproj=C:\Users\ECS\Documents\RAD Studio\Projects\Project3.dproj</Transaction>
+    <Transaction>2021/11/17 10:21:49.000.644,C:\Repositories\Source XE5\Products\SATRASumm\System 8 Test\Unit4.pas=C:\Repositories\Source XE5\Products\SATRASumm\System 8 Test\SpeedTest.pas</Transaction>
+    <Transaction>2021/11/17 10:21:49.000.644,C:\Repositories\Source XE5\Products\SATRASumm\System 8 Test\Unit4.dfm=C:\Repositories\Source XE5\Products\SATRASumm\System 8 Test\SpeedTest.dfm</Transaction>
+    <Transaction>2021/11/17 10:22:08.000.894,C:\Repositories\Source XE5\Products\SATRASumm\System 8 Test\SpeedTest.pas=C:\Repositories\Source XE5\Products\SATRASumm\System 8 Test\Main.pas</Transaction>
+    <Transaction>2021/11/17 10:22:08.000.894,C:\Repositories\Source XE5\Products\SATRASumm\System 8 Test\SpeedTest.dfm=C:\Repositories\Source XE5\Products\SATRASumm\System 8 Test\Main.dfm</Transaction>
+    <Transaction>2021/11/17 10:22:26.000.634,C:\Repositories\Source XE5\Products\SATRASumm\System 8 Test\Project3.dproj=C:\Repositories\Source XE5\Products\SATRASumm\System 8 Test\LookupSpeedTest.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

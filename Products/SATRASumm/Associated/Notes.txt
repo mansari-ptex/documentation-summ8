@@ -1,0 +1,10 @@
+See Notes in XE2 versuion of laymain regarding AdsSettings etc - removed in XE5
+
+    //Problem... on certain computers (e.g.Ray's old
+    //laptop) but not on others (e.g. mine) the bulk layplanning crashes with a 7008 SQL error - 'The specified
+    //table, memo file, or index file was unable to be opened.' The effect is easily repeatable, but requires a
+    //combination of factors - i.e. other knives must be processed before a crash. If the offending knives are
+    //the only thing in the list, they work fine. The line below, along with the 'ADSSettings' component with
+    //cached tables set to 0, as suggested on the ADS site, fixes the problem.  Looks like it was Kaspersky holding
+    //the file open all along. Have left this in for good measure.
+//    qSaveLayplan.AdsCloseSqlStatement;   Removed when converted to FireDac

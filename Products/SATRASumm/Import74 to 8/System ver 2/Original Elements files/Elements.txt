@@ -1,0 +1,224 @@
+CUT01
+Cutting (Leather): Fetch leather from store
+S
+0.2635
+CUT02
+Cutting (Leather): Untie and count leather
+S
+0.647966666666667
+CUT03R
+Cutting (Synthetic): Lay up material layers from roll
+S
+0.2945
+CUT03S
+Cutting (Synthetic): Lay up material layers from sheets
+S
+0.211333333333333
+CUT04
+Cutting (Synthetic): Staple layers of material
+S
+0.355166666666667
+CUT05
+Cutting (Synthetic): Load sheet(s) into press
+S
+0.14975
+CUT06
+Cutting (Synthetic): Remove sheet(s) from press
+S
+0.0708333333333333
+CUT07
+Cutting (Synthetic): Load roll of material into gantry
+S
+0.5
+CUT08
+Cutting (Synthetic): Load into press from a roll on a gantry
+S
+0.131
+CUT09
+Cutting (Synthetic): Remove roll of material from gantry
+S
+0.333333333333333
+CUT10
+Cutting: Fetch and return knives to store
+S
+0.430166666666667
+CUT11
+Cutting: Fetch boxes
+S
+0.172333333333333
+CUT12
+Cutting: Pick up read and aside tickets
+S
+0.07825
+CUT13
+Cutting: Sort tickets
+S
+0.0255
+CUT14P
+Cutting: Set press stroke depth (Push and Pull)
+S
+0.166666666666667
+CUT14S
+Cutting: Set press stroke depth (Swing Beam)
+S
+0.166666666666667
+CUT14T
+Cutting: Set press stroke depth (Travelling Head)
+S
+0.166666666666667
+CUT15
+Cutting (Leather): Roll up and return leather to store
+S
+0.167416666666667
+CUT21
+Cutting (Leather): Replenish leather
+M
+0.0819166666666667
+CUT22
+Cutting (Leather): Fetch leather from horse
+M
+0.28125
+CUT22L
+Cutting (Leather): Fetch leather from horse (Large)
+M
+0.36975
+CUT22S
+Cutting (Leather): Fetch leather from horse (Small)
+M
+0.21025
+CUT23
+Cutting (Leather): Cut and aside waste, move leather forward
+M
+0.103083333333333
+CUT24P
+Cutting (Synthetic): Chop and aside waste (Push and Pull)
+M
+0.457583333333334
+CUT24T
+Cutting (Synthetic): Chop and aside waste (Travelling Head)
+M
+0.51325
+CUT25
+Cutting (Synthetic): Feed through material
+M
+0.03
+CUT26
+Cutting (Synthetic): Staple layers of material (Gantry)
+M
+0.252
+CUT41-1
+Cutting (Leather): Inspection time (Grade I leather)
+C
+0.0480833333333333
+CUT41-2
+Cutting (Leather): Inspection time (Grade II leather)
+C
+0.0515833333333333
+CUT41-3
+Cutting (Leather): Inspection time (Grade III leather)
+C
+0.0550833333333333
+CUT41-4
+Cutting (Leather): Inspection time (Grade IV leather)
+C
+0.0585833333333333
+CUT41-5
+Cutting (Leather): Inspection time (Grade V leather)
+C
+0.0620833333333333
+CUT41-6
+Cutting (Leather): Inspection time (Grade VI leather)
+C
+0.0655833333333333
+CUT42
+Cutting (Leather): Selection time
+C
+0.0443333333333333
+CUT43
+Cutting: Pick up and place knife
+C
+0.0213333333333333
+CUT43W
+Cutting (Leather): Pick up and place knife (Wool)
+C
+0.03525
+CUT44P
+Cutting: Activate press (Push and Pull)
+C
+0.0563333333333333
+CUT44S
+Cutting: Activate press (Swing Beam)
+C
+0.04675
+CUT44T
+Cutting: Activate press (Travelling Head)
+C
+0.0473333333333333
+CUT45
+Cutting: Extra press strike
+C
+0.0225833333333333
+CUT46
+Cutting: Press head down/up (0.5 inches)
+C
+0.002
+CUT47
+Cutting (Leather): Change knife
+C
+0.0331666666666667
+CUT48
+Cutting (Synthetic): Change knife and check size
+C
+0.108083333333333
+CUT49
+Cutting: Clear knife and aside cut component(s)
+C
+0.0753333333333333
+CUT50
+Cutting: Use of tool
+C
+0.0344166666666667
+CUT51
+Cutting: Peeling actions
+C
+0.00666666666666667
+CUT52
+Cutting (Leather): Inspect cut component
+P
+0.037
+CUT61      
+Cutting: Straightening components                            
+P                     
+0.0464166666666667
+CUT62
+Cutting: Count components
+P
+0.00825
+CUT63
+Cutting: Place ticket
+P
+0.0350833333333333
+CUT64
+Cutting: Banding
+P
+0.0485
+CUT64W
+Cutting (Leather): Banding (Wool)
+P
+0.0549166666666667
+CUT65
+Cutting: Get marking crayon
+P
+0.0441666666666667
+CUT66
+Cutting: Move marking crayon to bundle
+P
+0.00841666666666667
+CUT67
+Cutting: Stroke marking crayon
+P
+0.00508333333333333
+CUT68
+Cutting: Aside bundles to box
+P
+0.0925833333333333

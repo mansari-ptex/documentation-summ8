@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2021/11/30 15:55:11.000.802,C:\Repositories\Source XE5\Products\SATRASumm\System 8.3.1.0\ConstructionAllowanceFull.pas=C:\Repositories\Source XE5\Products\SATRASumm\System 8.3.1.0\ConstructionAllowance.pas</Transaction>
+    <Transaction>2021/11/30 15:55:11.000.804,C:\Repositories\Source XE5\Products\SATRASumm\System 8.3.1.0\ConstructionAllowanceFull.dfm=C:\Repositories\Source XE5\Products\SATRASumm\System 8.3.1.0\ConstructionAllowance.dfm</Transaction>
+    <Transaction>2021/11/30 15:55:50.000.211,C:\Repositories\Source XE5\Products\SATRASumm\System 8.3.1.0\ConstructionAllowanceFull.pas=</Transaction>
+    <Transaction>2021/11/30 15:56:02.000.699,=C:\Repositories\Source XE5\Products\SATRASumm\System 8.3.1.0\ConstructionAllowance.pas</Transaction>
+    <Transaction>2021/11/30 15:56:50.000.386,=C:\Repositories\Source XE5\Products\SATRASumm\System 8.3.1.0\ConstructionAllowanceFull.pas</Transaction>
+    <Transaction>2021/12/01 15:47:40.000.359,C:\Repositories\Source XE5\Products\SATRASumm\System 8.3.1.0\AllCostsFull.pas=C:\Repositories\Source XE5\Products\SATRASumm\System 8.3.1.0\AllCosts.pas</Transaction>
+    <Transaction>2021/12/01 15:47:40.000.359,C:\Repositories\Source XE5\Products\SATRASumm\System 8.3.1.0\AllCostsFull.dfm=C:\Repositories\Source XE5\Products\SATRASumm\System 8.3.1.0\AllCosts.dfm</Transaction>
+    <Transaction>2021/12/01 15:48:22.000.646,C:\Repositories\Source XE5\Products\SATRASumm\System 8.3.1.0\AllCostsFull.pas=</Transaction>
+    <Transaction>2021/12/01 15:48:32.000.312,=C:\Repositories\Source XE5\Products\SATRASumm\System 8.3.1.0\AllCosts.pas</Transaction>
+    <Transaction>2021/12/01 15:48:48.000.325,=C:\Repositories\Source XE5\Products\SATRASumm\System 8.3.1.0\AllCostsFull.pas</Transaction>
+  </Transactions>
+</BorlandProject>

@@ -1,0 +1,831 @@
+unit Merge;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Math,
+  General_Interlocking, FastGEO, ConvexHull, Interlocking
+  {$IFDEF DEBUGFULL}
+  , Debugger
+  {$ENDIF}
+  ;
+
+type
+  TMerge = record
+    Points: TPointArray;
+    Success: Boolean;
+  end;
+  TMergePoint = record
+    Index1, Index2: integer;
+    In1, In2: TPoint;
+    AddIn1: boolean;
+  end;
+  THullPattern = record
+    Point: TPoint2D;
+    Index, PatternNo: integer;
+  end;
+  THullFromPattern = array of THullPattern;
+  TIntArray = array of integer;
+  PMerged = ^TPoint;
+
+function MergePatterns(Knife, Knife2: TPattern; Interlock: TInterlock): TMerge;
+
+var
+  Tolerance: integer;
+
+{$IFDEF DEBUG}
+  InMerge, TotalInMerge: real;
+{$ENDIF}
+
+implementation
+
+function RealForCompare(Num1: double): int64;
+begin
+  Result := round(Num1 * 1000000);
+end;
+
+function Distance(x1, y1, x2, y2: TFloat): TFloat;
+var
+  dx, dy: TFloat;
+
+begin
+  dx := x2 - x1;
+  dy := y2 - y1;
+  Result := Sqrt(dx * dx + dy * dy);
+end;
+
+function MinimumDistanceFromPointToLine(ThePoint, LinePoint1, LinePoint2: TPoint;
+                                        var ClosePoint: TPoint): TFloat;
+var
+  Px, Py, x1, y1, x2, y2, Nx, Ny: TFloat;
+
+begin
+  Px := ThePoint.X;
+  Py := ThePoint.Y;
+  x1 := LinePoint1.X;
+  y1 := LinePoint1.Y;
+  x2 := LinePoint2.X;
+  y2 := LinePoint2.Y;
+  ClosestPointOnSegmentFromPoint(x1, y1, x2, y2, Px, Py, Nx, Ny);
+  Result := Distance(Px, Py, Nx, Ny);
+  ClosePoint.X := round(Nx);
+  ClosePoint.Y := round(Ny);
+end;
+
+{function PointOnJointHull(KnifeForPoint, KnifeForDistance: TPointArray;
+                          Hull: TPolygon2D): integer;
+var
+  i, j, k: integer;
+  Dist, MinDist: double;
+  ClosePoint: TPoint;
+
+begin
+  //Find point in KnifeForPoint and on hull of whole shape which is NOT <TOLERANCE from Knife2.
+  Result := -1;
+  i := 0;
+  while (Result = -1) and not(i = Length(KnifeForPoint) - 1) do
+  begin
+    j := 0;
+    while (Result = -1) and not(j = Length(Hull)) do
+    begin
+      if (KnifeForPoint[i].x = Hull[j].x) and (KnifeForPoint[i].y = Hull[j].y) then
+      begin
+        MinDist := 99999999;
+        for k := 0 to Length(KnifeForDistance) - 2 do
+        begin
+          Dist := MinimumDistanceFromPointToLine(KnifeForPoint[i], KnifeForDistance[k], KnifeForDistance[k + 1], ClosePoint);
+          if RealForCompare(Dist) < RealForCompare(MinDist) then
+            MinDist := Dist;
+        end;
+
+        //Line from last point to first point.
+        Dist := MinimumDistanceFromPointToLine(KnifeForPoint[i], KnifeForDistance[Length(KnifeForDistance) - 1], KnifeForDistance[0], ClosePoint);
+        if RealForCompare(Dist) < RealForCompare(MinDist) then
+          MinDist := Dist;
+
+        if MinDist > TOLERANCE then
+          Result := i;
+      end;
+      inc(j);
+    end;
+    inc(i);
+  end;
+end;  }
+
+function FindStartPoints(var StartPoint1, StartPoint2: integer;
+                         Pattern1, Pattern2: TPointArray;
+                         Hull: THullFromPattern): boolean;
+var
+  i: integer;
+
+begin
+  StartPoint1 := -1;
+  StartPoint2 := -1;
+  i := 0;
+  while not(i = Length(Hull)) and not((StartPoint1 > -1) and (StartPoint2 > -1)) do
+  begin
+    if (StartPoint1 = -1) and (Hull[i].PatternNo = 1) and
+      (MinimumDistanceFromPointToPolygon(Hull[i].Point, ConvertTPointArray_TPolygon2D(Pattern2)) > TOLERANCE) then
+      StartPoint1 := Hull[i].Index;
+
+    if (StartPoint2 = -1) and (Hull[i].PatternNo = 2) and
+      (MinimumDistanceFromPointToPolygon(Hull[i].Point, ConvertTPointArray_TPolygon2D(Pattern1)) > TOLERANCE) then
+      StartPoint2 := Hull[i].Index;
+
+    inc(i);
+  end;
+
+  if (StartPoint1 > -1) and (StartPoint2 > - 1) then
+    Result := True
+  else
+    Result := False;
+end;
+
+function ToLineFromPoint(ThePoint: TPoint;
+                         Knife1, Knife2: TPointArray;
+                         var ClosePoint, PostPoint: TPoint;
+                         var In2Index: integer): Boolean;    //closepoint is to go in knife2
+var
+  i, j: integer;
+  ClosestSoFar, Dist: double;
+  ThisClosePoint: TPoint;
+
+begin
+  //Find closest perpendicular point on Knife2 from ThePoint.
+  Result := False;
+  ClosestSoFar := 999;
+  //Find Closest points.
+  for i := 0 to Length(Knife2) - 2 do
+  begin
+    Dist := MinimumDistanceFromPointToLine(ThePoint, Knife2[i], Knife2[i + 1], ThisClosePoint);
+
+    if Dist <= TOLERANCE then
+    begin
+      if RealForCompare(Dist) < RealForCompare(ClosestSoFar) then
+      begin
+        ClosestSoFar := Dist;
+        ClosePoint := ThisClosePoint;
+        if Dist >= Distance(ThePoint.x, ThePoint.y, Knife2[i + 1].x, Knife2[i + 1].y) then
+          In2index := i + 1      //need this in case line is end on to point
+        else
+          In2Index := i;
+        Result := True;
+      end;
+    end;
+  end;
+
+  //Line from last point to first point
+  i := Length(Knife2) - 1;
+  Dist := MinimumDistanceFromPointToLine(ThePoint, Knife2[i], Knife2[0], ThisClosePoint);
+  if Dist <= TOLERANCE then
+  begin
+    if RealForCompare(Dist) < RealForCompare(ClosestSoFar) then
+    begin
+      ClosestSoFar := Dist;
+      ClosePoint := ThisClosePoint;
+        if Dist >= Distance(ThePoint.x, ThePoint.y, Knife2[0].x, Knife2[0].y) then
+          In2index := 0      //need this in case line is end on to point
+        else
+          In2Index := i;
+      Result := True;
+    end;
+  end;
+
+  if Result then
+  begin
+    //Check the close point in Knife2 doesn't have closER point on Knife1.  If it does set result to FALSE because we know we'll find it later.
+    for i := 0 to Length(Knife1) - 1 do
+    begin
+      ThePoint := Knife1[i];
+      j := i + 1;
+      if j > Length(Knife1) - 1 then
+        j := 0;
+      PostPoint := Knife1[j];
+
+      Dist := MinimumDistanceFromPointToLine(Knife2[In2Index], ThePoint, PostPoint, ThisClosePoint);
+      if Dist <= TOLERANCE then
+      begin
+        if RealForCompare(Dist) < RealForCompare(ClosestSoFar) then
+          Result := False;
+      end;
+    end;
+  end;
+end;
+
+function ToPointFromLine(Knife1, Knife2: TPointArray;
+                         Forwards: boolean;
+                         var ClosePoint: TPoint;
+                         var In1Index, In2Index: integer): Boolean;     //closepoint is to go in Knife1
+var
+  i, j: integer;
+  ClosestSoFar, Dist: double;
+  ThePoint, PostPoint, ThisClosePoint: TPoint;
+
+begin
+  ThePoint := Knife1[In1Index];
+  if Forwards then
+  begin
+    j := In1Index + 1;
+    if j > Length(Knife1) - 1 then
+      j := 0;
+  end
+  else
+  begin
+    j := In1Index - 1;
+    if j < 0 then
+      j := Length(Knife1) - 1;
+    In1Index := j;
+  end;
+  PostPoint := Knife1[j];
+
+  //Find closest perpendicular point on line ThePoint to PostPoint from Knife2.
+  Result := False;
+  ClosestSoFar := 999;
+  //Find Closest points.
+  for i := 0 to Length(Knife2) - 1 do
+  begin
+    Dist := MinimumDistanceFromPointToLine(Knife2[i], ThePoint, PostPoint, ThisClosePoint);
+    if Dist <= TOLERANCE then
+    begin
+      if RealForCompare(Dist) < RealForCompare(ClosestSoFar) then
+      begin
+        ClosestSoFar := Dist;
+        ClosePoint := ThisClosePoint;
+        In2Index := i;
+        Result := True;
+      end;
+    end;
+  end;
+
+  if Result then
+  begin
+    //Check the close point doesn't have closER point.  If it does set result to FALSE because we know we'll find it later.
+    for i := 0 to Length(Knife1) - 1 do
+    begin
+      ThePoint := Knife1[i];
+      j := i + 1;
+      if j > Length(Knife1) - 1 then
+        j := 0;
+      PostPoint := Knife1[j];
+
+      Dist := MinimumDistanceFromPointToLine(Knife2[In2Index], ThePoint, PostPoint, ThisClosePoint);
+      if Dist <= TOLERANCE then
+      begin
+        if RealForCompare(Dist) < RealForCompare(ClosestSoFar) then
+          Result := False;
+      end;
+    end;
+  end;
+end;
+
+function GoingUp(Index1, Index2, NPoints, StartPoint: integer): boolean;
+var
+  i: integer;
+
+begin
+  //Traverse array from index1 to index2, if passes through StartPoint then incrementing through array moves
+  //around perimeter and not through points to be eliminated. Otherwise it will be necessary to decrement.
+  i := Index1;
+
+  if Index1 = Index2 then
+    Result := True
+  else
+    Result := False;
+
+  while not(i = Index2) and not Result do
+  begin
+    inc(i);
+    if i > NPoints then
+      i := 0;
+
+    if i = StartPoint then
+      Result := True;
+  end;
+end;
+
+{function SearchStart(PointIndex: integer;
+                     InPatt1: TIntArray): integer;
+var
+  ChangePoint1, ChangePoint2, i, NextPoint, PreviousPoint: integer;
+
+begin
+  ChangePoint1 := -999;
+  ChangePoint2 := -999;
+  for i := 0 to Length(InPatt1) - 1 do
+  begin
+    if (i = 0) then
+      PreviousPoint := Length(InPatt1) - 1
+    else
+      PreviousPoint := i - 1;
+
+    if (i = Length(InPatt1) - 1) then
+      NextPoint := 0
+    else
+      NextPoint := i + 1;
+
+    if (InPatt1[i] > -1) and (InPatt1[NextPoint] = -1) and (ChangePoint1 < 0) then
+      ChangePoint1 := i;
+
+    if (InPatt1[i] > -1) and (InPatt1[PreviousPoint] = -1) and (ChangePoint2 < 0) then
+      ChangePoint2 := i;
+  end;
+
+  if ChangePoint1 = -999 then
+    Result := ChangePoint2
+  else if ChangePoint2 = -999 then
+    Result := ChangePoint1
+  else if (InPatt1[ChangePoint1] - PointIndex) > (InPatt1[ChangePoint2] - PointIndex) then
+    Result := ChangePoint2
+  else
+    Result := ChangePoint1;
+end;}
+
+function MergePatterns(Knife, Knife2: TPattern; Interlock: TInterlock): TMerge;
+var
+  OriginalRect, InterlockRect: TRect;
+  Pattern1, Pattern2, MergedPattern: TPointArray;
+  i, j, k, Closest, Dist, MergedLength, StartPoint1, StartPoint2, EndPoint, FirstStart, In1Index, In2Index,
+  MoveToPoint: integer;
+  BackToStart, FoundClosePoint: boolean;
+  Points: array of TPoint2D;
+  ThisPoint: TPoint2D;
+  Hull: TPolygon2D;
+  ClosePoint, PostPoint: TPoint;
+  MergePoint1, MergePoint2: TMergePoint;
+  Merged, LastMerged, CrossoverMerged: PMerged;
+  MergeList: TList;
+  InPatt1: TIntArray;
+  DoneIt, DoneIt2, VeryClose, EverFoundClosePoint: Boolean;
+  FullHull: THullFromPattern;
+
+begin
+{$IFDEF DEBUG}
+  InMerge := GetTickCount;
+{$ENDIF}
+
+  Tolerance := 5;
+  EverFoundClosePoint := False;
+
+  //Location of 2 patterns
+  OriginalRect := Interlock.Knife1BoundingRect;
+  InterlockRect := Interlock.Knife2BoundingRect;
+
+  SetLength(Pattern1, Length(Knife.ExpandedPoints));
+  SetLength(Pattern2, Length(Knife2.ExpandedPoints));
+  //Make an arrays, of single patterns and of BOTH patterns so full hull can be calculated
+  SetLength(Points, Length(Pattern1) + Length(Pattern2));
+  for i := 0 to Length(Pattern1) - 1 do
+  begin
+    Pattern1[i].x := OriginalRect.Left + Knife.ExpandedPoints[i].x;
+    Pattern1[i].y := OriginalRect.Top + Knife.ExpandedPoints[i].y;
+    Points[i].x := Pattern1[i].X;
+    Points[i].y := Pattern1[i].Y;
+  end;
+
+  Closest := 9999;
+  for i := 0 to Length(Pattern2) - 1 do
+  begin
+    Pattern2[i].x := InterlockRect.Left + Knife2.ExpandedPoints[i].x;
+    Pattern2[i].y := InterlockRect.Top + Knife2.ExpandedPoints[i].y;
+
+    ThisPoint.x := Pattern2[i].x;
+    ThisPoint.y := Pattern2[i].y;
+
+    Dist := trunc(MinimumDistanceFromPointToPolygon(ThisPoint, ConvertTPointArray_TPolygon2D(Pattern1))) + 1;
+    if Dist < Closest then
+      Closest := Dist;
+
+    Points[i + Length(Pattern1)].x := Pattern2[i].X;
+    Points[i + Length(Pattern1)].y := Pattern2[i].Y;
+  end;
+
+  for i := 0 to Length(Pattern1) - 1 do
+  begin
+    ThisPoint.x := Pattern1[i].x;
+    ThisPoint.y := Pattern1[i].y;
+
+    Dist := trunc(MinimumDistanceFromPointToPolygon(ThisPoint, ConvertTPointArray_TPolygon2D(Pattern2))) + 1;
+    if Dist < Closest then
+      Closest := Dist;
+  end;
+
+  if Closest > Tolerance then
+    Tolerance := Closest;
+
+  Hull := CreateConvexHull(Points);
+
+////////////////////////////////////////////////////
+// Hope to do this bit during ConvexHull calc later.
+  k := 0;
+  SetLength(FullHull, 0);
+  for i := 0 to Length(Hull) - 1 do
+  begin
+    j := 0;
+    DoneIt := False;
+    while not(j = Length(Pattern1)) do  //have to go ronud patterns because array index is required later
+    begin
+      if not DoneIt and ((round(Hull[i].x) = Pattern1[j].x) and (round(Hull[i].y) = Pattern1[j].y)) then
+      begin
+        SetLength(FullHull, Length(FullHull) + 1);
+        FullHull[k].Point.x := Pattern1[j].x;
+        FullHull[k].Point.y := Pattern1[j].y;
+        FullHull[k].PatternNo := 1;
+        FullHull[k].Index := j;
+        inc(k);
+        DoneIt := True;
+      end;
+      inc(j);
+    end;
+
+    j := 0;
+    DoneIt2 := False;
+    while not(j = Length(Pattern2)) do
+    begin
+      if not DoneIt2 and ((round(Hull[i].x) = Pattern2[j].x) and (round(Hull[i].y) = Pattern2[j].y)) then
+      begin
+        SetLength(FullHull, Length(FullHull) + 1);
+        FullHull[k].Point.x := Pattern2[j].x;
+        FullHull[k].Point.y := Pattern2[j].y;
+        FullHull[k].PatternNo := 2;
+        FullHull[k].Index := j;
+        inc(k);
+        DoneIt2 := True;
+      end;
+      inc(j);
+    end;
+  end;
+////////////////////////////////////////////////////
+
+  //Find a point on both individual patterns which is definitely not a close point and is on the joint hull -
+  //i.e. a point which will not be eliminated.
+ { StartPoint1 := PointOnJointHull(Pattern1, Pattern2, Hull);
+  StartPoint2 := PointOnJointHull(Pattern2, Pattern1, Hull);}
+
+  if FindStartPoints(StartPoint1, StartPoint2, Pattern1, Pattern2, FullHull) then
+  begin
+    //Look both ways round Pattern1 to find the close points
+    //Forwards
+    BackToStart := False;
+    FoundClosePoint := False;
+
+    i := StartPoint1;
+
+    while not FoundClosePoint and not BackToStart do
+    begin
+      FoundClosePoint := ToLineFromPoint(Pattern1[i], Pattern1, Pattern2, ClosePoint, PostPoint, In2Index);
+
+      if FoundClosePoint then
+      begin
+        MergePoint1.Index1 := i;
+        MergePoint1.Index2 := In2Index;
+        MergePoint1.In1 := Pattern1[i];
+        MergePoint1.In2 := ClosePoint;
+        MergePoint1.AddIn1 := False;
+        EverFoundClosePoint := True;
+      end
+      else
+      begin
+        In1Index := i;
+
+        FoundClosePoint := ToPointFromLine(Pattern1, Pattern2, True, ClosePoint, In1Index, In2Index);
+
+        if FoundClosePoint then
+        begin
+          MergePoint1.Index1 := In1Index;
+          MergePoint1.Index2 := In2Index;
+          MergePoint1.In1 := ClosePoint;
+          MergePoint1.In2 := Pattern2[In2Index];
+          MergePoint1.AddIn1 := True;
+
+          MergePoint2.Index1 := In1Index;   //set MP2 same as MP1 in case it is the only place the pattern touches.
+          MergePoint2.Index2 := In2Index;
+          MergePoint2.In1 := ClosePoint;
+          MergePoint2.In2 := Pattern2[In2Index];
+          MergePoint2.AddIn1 := True;
+          EverFoundClosePoint := True;
+        end;
+      end;
+      inc(i);
+      if i > Length(Pattern1) - 1 then
+        i := 0;
+      BackToStart := (i = StartPoint1);
+    end;
+
+    if FoundClosePoint then
+    begin
+      //Look backwards around Pattern1
+      BackToStart := False;
+      FoundClosePoint := False;
+
+      i := StartPoint1 - 1;  //never use StartPoint1 again in case it is a closepoint
+
+      if i < 0 then
+        i := Length(Pattern1) - 1
+      else if i > Length(Pattern1) - 1 then
+        i := 0;
+
+      while not FoundClosePoint and not BackToStart do
+      begin
+        FoundClosePoint := ToLineFromPoint(Pattern1[i], Pattern1, Pattern2, ClosePoint, PostPoint, In2Index);
+
+        if FoundClosePoint then
+        begin
+          MergePoint2.Index1 := i;
+          MergePoint2.Index2 := In2Index;
+          MergePoint2.In1 := Pattern1[i];
+          MergePoint2.In2 := ClosePoint;
+          MergePoint2.AddIn1 := False;
+          EverFoundClosePoint := True;
+        end
+        else
+        begin
+          In1Index := i;
+
+          FoundClosePoint := ToPointFromLine(Pattern1, Pattern2, False, ClosePoint, In1Index, In2Index);
+
+          if FoundClosePoint then
+          begin
+            MergePoint2.Index1 := In1Index;
+            MergePoint2.Index2 := In2Index;
+            MergePoint2.In1 := ClosePoint;
+            MergePoint2.In2 := Pattern2[In2Index];
+            MergePoint2.AddIn1 := True;
+            EverFoundClosePoint := True;          
+          end;
+        end;
+
+        dec(i);
+        if i < 0 then
+          i := Length(Pattern1) - 1;
+        BackToStart := (i = StartPoint1);
+      end;
+
+      if EverFoundClosePoint then
+      begin
+        if MergePoint1.Index1 > Length(Pattern1) - 1 then
+          MergePoint1.Index1 := 0;
+
+        if MergePoint1.Index2 > Length(Pattern2) - 1 then
+          MergePoint1.Index2 := 0;
+
+//        MergeList := TList.Create;
+        SetLength(MergedPattern, Length(Pattern1) + Length(Pattern2) + 6);  //set to biggest it could ever be (add a bit for mergepoints)
+        MergedLength := 0;
+
+        //Begin with StartPoint1 so the direction is known - forwards through array.
+        i := StartPoint1 - 1;
+        EndPoint := StartPoint1; //- 1;
+        if EndPoint < 0 then
+          EndPoint :=  Length(Pattern1) - 1;
+
+        BackToStart := False;
+        while not BackToStart do
+        begin
+          inc(i);
+          if i > Length(Pattern1) - 1 then
+            i := 0;
+          if (MergedLength = 0) or (Sqrt(Sqr(Pattern1[i].x - MergedPattern[MergedLength - 1].x) +
+            Sqr(Pattern1[i].y - MergedPattern[MergedLength - 1].y)) > 1) then  //don't add duplicates or very close to pattern
+          begin
+            inc(MergedLength);
+            MergedPattern[MergedLength - 1] := Pattern1[i];
+          end;
+{          New(Merged);
+          Merged^ := Pattern1[i];
+          MergeList.Add(Merged);}
+          BackToStart := (i = MergePoint1.Index1);
+        end;
+
+        if MergePoint1.AddIn1 then
+        begin
+          //If a new point is to be added to Pattern1 perpendicular to real point in Pattern2 then add it now.
+          if (MergedLength = 0) or (Sqrt(Sqr(Pattern1[MergePoint1.Index1].x - MergedPattern[MergedLength - 1].x) +
+            Sqr(Pattern1[MergePoint1.Index1].y - MergedPattern[MergedLength - 1].y)) > 1) then  //don't add duplicates or very close to pattern
+          begin
+            inc(MergedLength);
+            MergedPattern[MergedLength - 1] := MergePoint1.In1;
+          end;
+{          New(Merged);
+          Merged^ := MergePoint1.In1;
+          MergeList.Add(Merged);}
+          MoveToPoint := 1;
+        end
+        else
+        begin
+          //If a new point is to be added to Pattern2 perpendicular to the last added point in Pattern1 then add it now.
+          if (MergedLength = 0) or (Sqrt(Sqr(Pattern2[MergePoint1.Index2].x - MergedPattern[MergedLength - 1].x) +
+            Sqr(Pattern2[MergePoint1.Index2].y - MergedPattern[MergedLength - 1].y)) > 1) then  //don't add duplicates or very close to pattern
+          begin
+            inc(MergedLength);
+            MergedPattern[MergedLength - 1] := MergePoint1.In2;
+          end;
+
+{          New(Merged);
+          Merged^ := MergePoint1.In2;
+          MergeList.Add(Merged);}
+          MoveToPoint := 0;
+        end;
+
+        if (MergePoint1.Index2 = MergePoint2.Index2) then
+          MoveToPoint := 0;
+
+        //Find direction of points in Pattern2 to go round perimeter, not through points to be eliminated.  Also,
+        //go up points if there are none to be eliminated (i.e. knives touch in only one place)
+        if GoingUp(MergePoint1.Index2, MergePoint2.Index2, Length(Pattern2) - 1, StartPoint2) then         //from 2
+        begin
+          i := MergePoint1.Index2 - MoveToPoint;
+
+          //Move around Pattern2 adding points to list until second Merge Point is reached.
+          BackToStart := False;
+          while not BackToStart do
+          begin
+            inc(i);
+            if i > Length(Pattern2) - 1 then
+              i := 0;
+            if (MergedLength = 0) or (Sqrt(Sqr(Pattern2[i].x - MergedPattern[MergedLength - 1].x) +
+              Sqr(Pattern2[i].y - MergedPattern[MergedLength - 1].y)) > 1) then  //don't add duplicates or very close to pattern
+            begin
+              inc(MergedLength);
+              MergedPattern[MergedLength - 1] := Pattern2[i];
+            end;
+{            New(Merged);
+            Merged^ := Pattern2[i];
+            MergeList.Add(Merged);}
+            BackToStart := (i = MergePoint2.Index2);
+          end;
+
+          if MergePoint2.AddIn1 then
+          begin
+            //if point in Pattern1 perpendicular to real point in Pattern2 has been calculated, add it to list
+            //and set i to correct Pattern1 index.
+            if (MergedLength = 0) or (Sqrt(Sqr(Pattern1[MergePoint2.Index1].x - MergedPattern[MergedLength - 1].x) +
+              Sqr(Pattern1[MergePoint2.Index1].y - MergedPattern[MergedLength - 1].y)) > 1) then  //don't add duplicates or very close to pattern
+            begin
+              inc(MergedLength);
+              MergedPattern[MergedLength - 1] := MergePoint2.In1;
+
+            end;
+ {            New(Merged);
+            Merged^ := MergePoint2.In1;
+            MergeList.Add(Merged);}
+            i := MergePoint2.Index1 + 1;
+            if i > Length(Pattern1) - 1 then
+              i := 0;
+          end
+          else
+          begin
+            //if point in Pattern2 perpendicular to real point in Pattern1 has been calculated, add it to list
+            //and set i to correct Pattern1 index.
+            if (MergedLength = 0) or (Sqrt(Sqr(Pattern2[MergePoint2.Index2].x - MergedPattern[MergedLength - 1].x) +
+              Sqr(Pattern2[MergePoint2.Index2].y - MergedPattern[MergedLength - 1].y)) > 1) then  //don't add duplicates or very close to pattern
+            begin
+              inc(MergedLength);
+              MergedPattern[MergedLength - 1] := MergePoint2.In2;
+            end;
+{            New(Merged);
+            Merged^ := MergePoint2.In2;
+            MergeList.Add(Merged);}
+            i := MergePoint2.Index1;
+          end;
+        end
+        else
+        begin
+          //Traverse array backwards to travel around perimemter and not through points to be eliminated.
+          i := MergePoint1.Index2;
+
+          BackToStart := False;
+          while not BackToStart do
+          begin
+            if (MergedLength = 0) or (Sqrt(Sqr(Pattern2[i].x - MergedPattern[MergedLength - 1].x) +
+              Sqr(Pattern2[i].y - MergedPattern[MergedLength - 1].y)) > 1) then  //don't add duplicates or very close to pattern
+            begin
+              inc(MergedLength);
+              MergedPattern[MergedLength - 1] := Pattern2[i];
+            end;
+{            New(Merged);
+            Merged^ := Pattern2[i];
+            MergeList.Add(Merged);}
+            dec(i);
+            if i < 0 then
+              i := Length(Pattern2) - 1;
+            BackToStart := (i = MergePoint2.Index2);
+          end;
+
+          if MergePoint2.AddIn1 then
+          begin
+            //if point in Pattern1 perpendicular to real point in Pattern2 has been calculated, add it to list
+            //and set i to correct Pattern1 index.
+            if (MergedLength = 0) or (Sqrt(Sqr(Pattern1[MergePoint2.Index1].x - MergedPattern[MergedLength - 1].x) +
+              Sqr(Pattern1[MergePoint2.Index1].y - MergedPattern[MergedLength - 1].y)) > 1) then  //don't add duplicates or very close to pattern
+            begin
+              inc(MergedLength);
+              MergedPattern[MergedLength - 1] := MergePoint2.In1;
+            end;
+{            New(Merged);
+            Merged^ := MergePoint2.In1;
+            MergeList.Add(Merged);}
+            i := MergePoint2.Index1 + 1;
+            if i > Length(Pattern1) - 1 then
+              i := 0;
+          end
+          else
+          begin
+            //if point in Pattern2 perpendicular to real point in Pattern1 has been calculated, add it to list
+            //and set i to correct Pattern1 index.
+            if (MergedLength = 0) or (Sqrt(Sqr(Pattern2[MergePoint2.Index2].x - MergedPattern[MergedLength - 1].x) +
+              Sqr(Pattern2[MergePoint2.Index2].y - MergedPattern[MergedLength - 1].y)) > 1) then  //don't add duplicates or very close to pattern
+            begin
+              inc(MergedLength);
+              MergedPattern[MergedLength - 1] := MergePoint2.In2;
+            end;
+{            New(Merged);
+            Merged^ := MergePoint2.In2;
+            MergeList.Add(Merged);  }
+            i := MergePoint2.Index1;
+          end;
+        end;
+
+        //Traverse remainder of Pattern1 to close merged shape.
+        i := i - 1;
+        BackToStart := False;
+        while not BackToStart do
+        begin
+          inc(i);
+
+          if i > Length(Pattern1) - 1 then
+            i := 0;
+          if (i = EndPoint) then
+            BackToStart := True
+          else
+          begin
+            if (MergedLength = 0) or (Sqrt(Sqr(Pattern1[i].x - MergedPattern[MergedLength - 1].x) +
+              Sqr(Pattern1[i].y - MergedPattern[MergedLength - 1].y)) > 1) then  //don't add duplicates or very close to pattern
+            begin
+              inc(MergedLength);
+              MergedPattern[MergedLength - 1] := Pattern1[i];
+            end;
+{            New(Merged);
+            Merged^ := Pattern1[i];
+            MergeList.Add(Merged);}
+          end;
+        end;
+
+        SetLength(MergedPattern, MergedLength);
+
+        //Transfer list points back into TPointArray, eliminating duplicate (or VERY close) points
+{        j := 0;
+        LastMerged := nil;
+        for i := 0 to MergeList.Count - 1 do
+        begin
+          Merged := MergeList[i];
+
+          //Distance between 2 points
+          if (LastMerged = nil) then
+            VeryClose := False
+          else
+            VeryClose := (Sqrt(Sqr(Merged^.x - LastMerged^.x) + Sqr(Merged^.y - LastMerged^.y)) <= 1);
+
+          if (not VeryClose) then
+          begin
+            inc(j);
+            SetLength(MergedPattern, j);
+
+            MergedPattern[j - 1] := Merged^;
+          end;
+
+          LastMerged := Merged;
+        end;
+ }
+        //At Cross over points we may have got 2 extremely close points
+        //that should in fact be treated as the same.
+        for i := 0 to Length(MergedPattern) - 1 do
+          for j := i + 1 to Length(MergedPattern) - 1 do
+          begin
+            VeryClose := (Sqrt(Sqr(MergedPattern[i].x - MergedPattern[j].x) +
+                               Sqr(MergedPattern[i].y - MergedPattern[j].y)) <= 1);
+            if VeryClose then
+              MergedPattern[j] := MergedPattern[i];
+          end;
+      end;
+
+{      for i := 0 to MergeList.Count - 1 do
+        Dispose(MergeList[i]);
+
+      FreeAndNil(MergeList);}
+    end;
+  end; //of if findstartpoint
+
+  {$IFDEF DEBUGFULL}
+    fmDebugger.DrawMerge(Pattern1, Pattern2, MergedPattern, Hull, StartPoint1, StartPoint2, EverFoundClosePoint);
+  {$ENDIF}
+
+  Result.Points := MergedPattern;
+  Result.Success := EverFoundClosePoint;
+{$IFDEF DEBUG}
+  InMerge := GetTickCount - InMerge;
+  TotalInMerge := TotalInMerge + InMerge;
+{$ENDIF}
+end;
+
+end.
+

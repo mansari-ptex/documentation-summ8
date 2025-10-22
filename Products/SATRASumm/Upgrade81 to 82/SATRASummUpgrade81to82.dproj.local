@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2018/03/21 11:11:19.000.045,C:\Users\timh\Documents\RAD Studio\Projects\Unit52.dfm=C:\Users\timh\Desktop\Source XE5\Products\SATRASumm\NewUpgrade80 to 81\Main.dfm</Transaction>
+    <Transaction>2018/03/21 11:11:50.000.089,C:\Users\timh\Documents\RAD Studio\Projects\Project49.dproj=C:\Users\timh\Desktop\Source XE5\Products\SATRASumm\NewUpgrade80 to 81\SATRASummUpgrade80to81.dproj</Transaction>
+    <Transaction>2020/09/09 11:02:46.000.601,C:\Users\timh\Desktop\Source XE5\Products\SATRASumm\Upgrade81 to 82\SATRASummUpgrade81to82.dproj=C:\Users\timh\Desktop\Source XE5\Products\SATRASumm\Upgrade81 to 82\SATRASummUpgrade80to81.dproj</Transaction>
+    <Transaction>2020/09/09 11:05:40.000.185,C:\Users\timh\Desktop\Source XE5\Products\SATRASumm\System 8.1.0.0\KnifeNettArea.pas=</Transaction>
+    <Transaction>2020/09/09 11:05:49.000.050,C:\Users\timh\Desktop\Source XE5\Products\SATRASumm\System 8.1.0.0\Interlocking\General_Interlocking.pas=</Transaction>
+    <Transaction>2020/09/09 11:05:53.000.717,C:\Users\timh\Desktop\Source XE5\Products\SATRASumm\System 8.1.0.0\Interlocking\Interlocking.pas=</Transaction>
+    <Transaction>2020/09/09 11:05:53.000.570,C:\Users\timh\Desktop\Source XE5\Products\SATRASumm\System 8.1.0.0\Interlocking\Const_Interlocking.pas=</Transaction>
+    <Transaction>2020/09/09 11:05:53.000.616,C:\Users\timh\Desktop\Source XE5\Products\SATRASumm\System 8.1.0.0\Interlocking\ConvexHull.pas=</Transaction>
+    <Transaction>2020/09/09 11:05:53.000.727,C:\Users\timh\Desktop\Source XE5\Products\SATRASumm\System 8.1.0.0\Interlocking\PolygonOverlaps.pas=</Transaction>
+    <Transaction>2020/09/09 11:05:53.000.624,C:\Users\timh\Desktop\Source XE5\Products\SATRASumm\System 8.1.0.0\Interlocking\Edges.pas=</Transaction>
+    <Transaction>2020/09/09 11:05:53.000.639,C:\Users\timh\Desktop\Source XE5\Products\SATRASumm\System 8.1.0.0\Interlocking\FastGEO.pas=</Transaction>
+    <Transaction>2020/09/09 11:05:53.000.632,C:\Users\timh\Desktop\Source XE5\Products\SATRASumm\System 8.1.0.0\Interlocking\Expansion.pas=</Transaction>
+  </Transactions>
+</BorlandProject>

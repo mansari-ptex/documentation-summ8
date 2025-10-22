@@ -1,0 +1,926 @@
+EurekaLog 6.1.04
+
+Application:
+-------------------------------------------------------
+  1.1 Start Date      : Thu, 20 Feb 2014 12:01:01 +0000
+  1.2 Name/Description: SATRASummUpgrade74to8.exe
+  1.3 Version Number  : 1.0.0.0
+  1.4 Parameters      : 
+  1.5 Compilation Date: Tue, 18 Feb 2014 15:36:00 +0000
+  1.6 Up Time         : 3 seconds
+
+Exception:
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  2.1 Date          : Thu, 20 Feb 2014 12:01:04 +0000
+  2.2 Address       : 005F91F6
+  2.3 Module Name   : SATRASummUpgrade74to8.exe
+  2.4 Module Version: 1.0.0.0
+  2.5 Type          : EADSDatabaseError
+  2.6 Message       : tblCuttingElements: Error 7076:  A corresponding primary key value was not found for the foreign key value.  No primary key found in Elements:PRIMARY for the foreign key update to CuttingElements:ELEMENT.
+  2.7 ID            : 1233
+  2.8 Count         : 1
+  2.9 Status        : New
+  2.10 Note         : 
+
+User:
+-------------------------------------------------------
+  3.1 ID        : timh
+  3.2 Name      : itsupport
+  3.3 Email     : 
+  3.4 Company   : 
+  3.5 Privileges: SeIncreaseQuotaPrivilege        - OFF
+                  SeSecurityPrivilege             - OFF
+                  SeTakeOwnershipPrivilege        - OFF
+                  SeLoadDriverPrivilege           - OFF
+                  SeSystemProfilePrivilege        - OFF
+                  SeSystemtimePrivilege           - OFF
+                  SeProfileSingleProcessPrivilege - OFF
+                  SeIncreaseBasePriorityPrivilege - OFF
+                  SeCreatePagefilePrivilege       - OFF
+                  SeBackupPrivilege               - OFF
+                  SeRestorePrivilege              - OFF
+                  SeShutdownPrivilege             - OFF
+                  SeDebugPrivilege                - OFF
+                  SeSystemEnvironmentPrivilege    - OFF
+                  SeChangeNotifyPrivilege         - ON
+                  SeRemoteShutdownPrivilege       - OFF
+                  SeUndockPrivilege               - OFF
+                  SeManageVolumePrivilege         - OFF
+                  SeImpersonatePrivilege          - ON
+                  SeCreateGlobalPrivilege         - ON
+                  SeIncreaseWorkingSetPrivilege   - OFF
+                  SeTimeZonePrivilege             - OFF
+                  SeCreateSymbolicLinkPrivilege   - OFF
+
+Active Controls:
+-------------------------------------------------
+  4.1 Form Class   : TfmUpgrade
+  4.2 Form Text    : SATRASumm Upgrade 7.4 to 8.0
+  4.3 Control Class: TfmUpgrade
+  4.4 Control Text : 
+
+Computer:
+-------------------------------------------------------------------------
+  5.1 Name          : D0079
+  5.2 Total Memory  : 8153 Mb
+  5.3 Free Memory   : 5623 Mb
+  5.4 Total Disk    : 465.66 Gb
+  5.5 Free Disk     : 313.69 Gb
+  5.6 System Up Time: 2 hours, 9 minutes, 26 seconds
+  5.7 Processor     : Intel(R) Core(TM) i7-3770 CPU @ 3.40GHz
+  5.8 Display Mode  : 1680 x 1050, 32 bit
+  5.9 Display DPI   : 96
+  5.10 Video Card   : AMD Radeon HD 7570 (driver 8.911.0.0 - RAM 1024 MB)
+  5.11 Printer      : HP Universal Printing PCL 5 (driver 6.1.7601.17514)
+
+Operating System:
+--------------------------------------------
+  6.1 Type    : Microsoft Windows 7 (64 bit)
+  6.2 Build # : 7601
+  6.3 Update  : Service Pack 1
+  6.4 Language: English
+  6.5 Charset : 0
+
+Network:
+---------------------------------------------------------------------
+  7.1 IP Address: 192.168.022.137 - 192.168.126.001 - 192.168.145.001
+  7.2 Submask   : 255.255.252.000 - 255.255.255.000 - 255.255.255.000
+  7.3 Gateway   : 192.168.020.001 - 000.000.000.000 - 000.000.000.000
+  7.4 DNS 1     : 192.168.025.047 - 000.000.000.000 - 000.000.000.000
+  7.5 DNS 2     : 192.168.100.004 - 000.000.000.000 - 000.000.000.000
+  7.6 DHCP      : ON              - OFF             - OFF            
+
+Call Stack Information:
+--------------------------------------------------------------------------------------------------
+|Address |Module                   |Unit                     |Class     |Procedure/Method|Line   |
+--------------------------------------------------------------------------------------------------
+|*Exception Thread: ID=4800; Priority=0; Class=; [Main]                                          |
+|------------------------------------------------------------------------------------------------|
+|005F91F6|SATRASummUpgrade74to8.exe|                         |          |                |       |
+|006202C4|SATRASummUpgrade74to8.exe|Main.pas                 |TfmUpgrade|CuttingElements |177[45]|
+|0061FF34|SATRASummUpgrade74to8.exe|Main.pas                 |TfmUpgrade|CuttingElements |132[0] |
+|0061FD6C|SATRASummUpgrade74to8.exe|Main.pas                 |TfmUpgrade|btnUpgradeClick |99[52] |
+|76537033|USER32.dll               |                         |          |GetWindowLongW  |       |
+|765396C0|USER32.dll               |                         |          |SendMessageW    |       |
+|76540D48|USER32.dll               |                         |          |CallWindowProcW |       |
+|76540D32|USER32.dll               |                         |          |CallWindowProcW |       |
+|76542ABC|USER32.dll               |                         |          |GetCapture      |       |
+|76542AAC|USER32.dll               |                         |          |GetCapture      |       |
+|76537885|USER32.dll               |                         |          |DispatchMessageW|       |
+|7653787B|USER32.dll               |                         |          |DispatchMessageW|       |
+|0062963F|SATRASummUpgrade74to8.exe|SATRASummUpgrade74to8.dpr|          |                |13[3]  |
+--------------------------------------------------------------------------------------------------
+
+Modules Information:
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|Handle  |Name                     |Description                                        |Version           |Size    |Modified           |Path                                                                                                         |
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|00400000|SATRASummUpgrade74to8.exe|                                                   |1.0.0.0           |2546176 |2014-02-18 15:36:02|C:\Users\timh\Desktop\Source XE2\Products\SATRASumm\Upgrade74 to 8                                           |
+|12170000|ACE32.DLL                |Advantage Client Engine DLL                        |11.0.0.0          |1652624 |2012-06-25 11:00:00|C:\Windows\system32                                                                                          |
+|187B0000|axcws32.dll              |Advantage 32-bit remote communication library      |11.0.0.0          |227216  |2012-06-25 11:00:00|C:\Windows\system32                                                                                          |
+|4A800000|aicu32.dll               |IBM ICU Common DLL                                 |4.0.0.1           |2037648 |2012-06-25 11:00:00|C:\Windows\system32                                                                                          |
+|6E8B0000|msimg32.dll              |GDIEXT Client DLL                                  |6.1.7600.16385    |4608    |2009-07-14 01:15:46|C:\Windows\system32                                                                                          |
+|70280000|WINSTA.dll               |Winstation Library                                 |6.1.7601.17514    |156672  |2010-11-21 03:23:56|C:\Windows\system32                                                                                          |
+|704F0000|MPR.dll                  |Multiple Provider Router DLL                       |6.1.7600.16385    |64000   |2009-07-14 01:15:42|C:\Windows\system32                                                                                          |
+|70570000|uxtheme.dll              |Microsoft UxTheme Library                          |6.1.7600.16385    |245760  |2009-07-14 01:11:26|C:\Windows\system32                                                                                          |
+|70AE0000|wtsapi32.dll             |Windows Remote Desktop Session Host Server SDK APIs|6.1.7601.17514    |40448   |2010-11-21 03:23:56|C:\Windows\system32                                                                                          |
+|714E0000|mswsock.dll              |Microsoft Windows Sockets 2.0 Service Provider     |6.1.7601.18254    |231424  |2013-09-08 02:04:00|C:\Windows\system32                                                                                          |
+|71A90000|wsock32.dll              |Windows Socket 32-Bit DLL                          |6.1.7600.16385    |15360   |2009-07-14 01:16:22|C:\Windows\system32                                                                                          |
+|723F0000|comctl32.dll             |User Experience Controls Library                   |6.10.7601.17514   |1680896 |2010-11-21 03:23:56|C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.17514_none_41e6975e2bd6f2b2|
+|72590000|winspool.drv             |Windows Spooler Driver                             |6.1.7601.17514    |320000  |2010-11-21 03:24:10|C:\Windows\system32                                                                                          |
+|72C40000|version.dll              |Version Checking and File Installation Libraries   |6.1.7600.16385    |21504   |2009-07-14 01:16:18|C:\Windows\system32                                                                                          |
+|74AF0000|rsaenh.dll               |Microsoft Enhanced Cryptographic Provider          |6.1.7600.16385    |242936  |2009-07-14 01:17:56|C:\Windows\system32                                                                                          |
+|74F30000|CRYPTSP.dll              |Cryptographic Service Provider API                 |6.1.7600.16385    |78848   |2009-07-14 01:15:08|C:\Windows\system32                                                                                          |
+|75120000|sophos_detoured.dll      |Sophos Buffer Overrun Protection                   |10.2.10.4         |275352  |2013-11-14 10:15:28|C:\Program Files (x86)\Sophos\Sophos Anti-Virus                                                              |
+|75530000|CRYPTBASE.dll            |Base cryptographic API DLL                         |6.1.7600.16385    |36864   |2009-07-14 01:15:08|C:\Windows\syswow64                                                                                          |
+|75540000|SspiCli.dll              |Security Support Provider Interface                |6.1.7601.18270    |96768   |2013-09-25 01:58:18|C:\Windows\syswow64                                                                                          |
+|755A0000|WS2_32.dll               |Windows Socket 2.0 32-Bit DLL                      |6.1.7601.17514    |206848  |2010-11-21 03:23:56|C:\Windows\syswow64                                                                                          |
+|755E0000|MSCTF.dll                |MSCTF Server DLL                                   |6.1.7600.16385    |828928  |2009-07-14 01:15:44|C:\Windows\syswow64                                                                                          |
+|75740000|GDI32.dll                |GDI Client DLL                                     |6.1.7601.18275    |311808  |2013-10-03 02:00:46|C:\Windows\syswow64                                                                                          |
+|75800000|shell32.dll              |Windows Shell Common Dll                           |6.1.7601.18222    |12872704|2013-07-26 01:56:00|C:\Windows\syswow64                                                                                          |
+|76450000|WINTRUST.dll             |Microsoft Trust Verification APIs                  |6.1.7601.18205    |175104  |2013-07-09 04:52:12|C:\Windows\syswow64                                                                                          |
+|76480000|USP10.dll                |Uniscribe Unicode script processor                 |1.626.7601.18009  |626688  |2012-11-22 04:45:04|C:\Windows\syswow64                                                                                          |
+|76520000|USER32.dll               |Multi-User Windows USER API Client DLL             |6.1.7601.17514    |833024  |2010-11-21 03:24:22|C:\Windows\syswow64                                                                                          |
+|76620000|ole32.dll                |Microsoft OLE for Windows                          |6.1.7601.17514    |1414144 |2010-11-21 03:24:02|C:\Windows\syswow64                                                                                          |
+|76780000|IMM32.DLL                |Multi-User Windows IMM32 API Client DLL            |6.1.7601.17514    |119808  |2010-11-21 03:24:26|C:\Windows\system32                                                                                          |
+|767E0000|MSASN1.dll               |ASN.1 Runtime APIs                                 |6.1.7601.17514    |34304   |2010-11-21 03:23:50|C:\Windows\syswow64                                                                                          |
+|769D0000|LPK.dll                  |Language Pack                                      |6.1.7601.18177    |25600   |2013-06-06 04:57:02|C:\Windows\syswow64                                                                                          |
+|76B00000|oleaut32.dll             |                                                   |6.1.7601.17676    |571904  |2011-08-27 04:26:28|C:\Windows\syswow64                                                                                          |
+|76C00000|RPCRT4.dll               |Remote Procedure Call Runtime                      |6.1.7601.18205    |663552  |2013-07-09 04:52:34|C:\Windows\syswow64                                                                                          |
+|76CF0000|CLBCatQ.DLL              |COM+ Configuration Catalog                         |2001.12.8530.16385|522240  |2009-07-14 01:15:04|C:\Windows\syswow64                                                                                          |
+|76D80000|msvcrt.dll               |Windows NT CRT DLL                                 |7.0.7601.17744    |690688  |2011-12-16 07:53:00|C:\Windows\syswow64                                                                                          |
+|76E30000|ADVAPI32.dll             |Advanced Windows 32 Base API                       |6.1.7601.18247    |640512  |2013-08-29 01:48:18|C:\Windows\syswow64                                                                                          |
+|76F50000|sechost.dll              |Host for SCM/SDDL/LSA Lookup APIs                  |6.1.7600.16385    |92160   |2009-07-14 01:16:14|C:\Windows\SysWOW64                                                                                          |
+|76FC0000|KERNELBASE.dll           |Windows NT BASE API Client DLL                     |6.1.7601.18229    |274944  |2013-08-02 01:50:44|C:\Windows\syswow64                                                                                          |
+|77010000|kernel32.dll             |Windows NT BASE API Client DLL                     |6.1.7601.18229    |1114112 |2013-08-02 01:50:42|C:\Windows\syswow64                                                                                          |
+|77120000|CRYPT32.dll              |Crypto API32                                       |6.1.7601.18277    |1168384 |2013-10-05 19:57:26|C:\Windows\syswow64                                                                                          |
+|77360000|SHLWAPI.dll              |Shell Light-weight Utility Library                 |6.1.7601.17514    |350208  |2010-11-21 03:23:50|C:\Windows\syswow64                                                                                          |
+|773C0000|NSI.dll                  |NSI User-mode interface DLL                        |6.1.7600.16385    |8704    |2009-07-14 01:16:12|C:\Windows\syswow64                                                                                          |
+|77570000|imagehlp.dll             |Windows NT Image Helper                            |6.1.7601.18288    |159232  |2013-10-19 01:37:00|C:\Windows\syswow64                                                                                          |
+|77E30000|PSAPI.DLL                |Process Status Helper                              |6.1.7600.16385    |6144    |2009-07-14 01:16:14|C:\Windows\syswow64                                                                                          |
+|77E60000|ntdll.dll                |NT Layer DLL                                       |6.1.7601.18247    |1292192 |2013-08-29 01:50:32|C:\Windows\SysWOW64                                                                                          |
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Processes Information:
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|ID  |Name                     |Description                                       |Version        |Memory|Priority    |Threads|Path                                                                                       |
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|0   |[System Process]         |                                                  |               |0     |            |8      |                                                                                           |
+|4   |System                   |                                                  |               |0     |Normal      |192    |                                                                                           |
+|400 |atiesrxx.exe             |                                                  |               |0     |Normal      |6      |                                                                                           |
+|432 |smss.exe                 |                                                  |               |0     |Above-Normal|2      |                                                                                           |
+|476 |svchost.exe              |Host Process for Windows Services                 |6.1.7600.16385 |0     |Normal      |24     |                                                                                           |
+|600 |csrss.exe                |                                                  |               |0     |High        |9      |                                                                                           |
+|676 |wininit.exe              |Windows Start-Up Application                      |6.1.7600.16385 |0     |High        |3      |                                                                                           |
+|696 |csrss.exe                |                                                  |               |0     |High        |11     |                                                                                           |
+|740 |services.exe             |                                                  |               |0     |Normal      |7      |                                                                                           |
+|756 |lsass.exe                |                                                  |               |0     |Normal      |8      |                                                                                           |
+|764 |lsm.exe                  |                                                  |               |0     |Normal      |10     |                                                                                           |
+|820 |winlogon.exe             |                                                  |               |0     |High        |3      |                                                                                           |
+|912 |svchost.exe              |Host Process for Windows Services                 |6.1.7600.16385 |0     |Normal      |11     |                                                                                           |
+|992 |svchost.exe              |Host Process for Windows Services                 |6.1.7600.16385 |0     |Normal      |10     |                                                                                           |
+|1056|svchost.exe              |Host Process for Windows Services                 |6.1.7600.16385 |0     |Normal      |32     |                                                                                           |
+|1088|svchost.exe              |Host Process for Windows Services                 |6.1.7600.16385 |0     |Normal      |20     |                                                                                           |
+|1092|svchost.exe              |Host Process for Windows Services                 |6.1.7600.16385 |0     |Normal      |30     |                                                                                           |
+|1124|svchost.exe              |Host Process for Windows Services                 |6.1.7600.16385 |0     |Normal      |38     |                                                                                           |
+|1244|svchost.exe              |Host Process for Windows Services                 |6.1.7600.16385 |0     |Normal      |7      |                                                                                           |
+|1368|SavService.exe           |                                                  |               |0     |Normal      |57     |                                                                                           |
+|1392|atieclxx.exe             |                                                  |               |0     |Normal      |10     |                                                                                           |
+|1504|spoolsv.exe              |                                                  |               |0     |Normal      |15     |                                                                                           |
+|1852|svchost.exe              |Host Process for Windows Services                 |6.1.7600.16385 |0     |Normal      |24     |                                                                                           |
+|1900|SCFService.exe           |                                                  |               |0     |Normal      |12     |                                                                                           |
+|1992|SCFManager.exe           |                                                  |               |0     |Normal      |9      |                                                                                           |
+|2208|swi_service.exe          |                                                  |               |0     |Normal      |16     |                                                                                           |
+|2224|armsvc.exe               |                                                  |               |0     |Normal      |4      |                                                                                           |
+|2260|AERTSr64.exe             |                                                  |               |0     |Normal      |4      |                                                                                           |
+|2284|AdminService.exe         |                                                  |               |0     |Normal      |5      |                                                                                           |
+|2312|BSQLServer.exe           |BlackfishSQL Server Launcher                      |8.0.2804.9245  |0     |Normal      |6      |                                                                                           |
+|2384|HeciServer.exe           |Intel(R) Capability Licensing Service Interface   |1.23.219.2     |0     |Normal      |4      |                                                                                           |
+|2436|Jhi_service.exe          |Intel(R) Dynamic Application Loader Host Interface|8.0.0.1399     |0     |Normal      |4      |                                                                                           |
+|2448|dllhost.exe              |COM Surrogate                                     |6.1.7600.16385 |0     |Normal      |6      |                                                                                           |
+|2468|svchost.exe              |Host Process for Windows Services                 |6.1.7600.16385 |0     |Normal      |4      |                                                                                           |
+|2492|osoausvc.exe             |                                                  |               |0     |Normal      |8      |                                                                                           |
+|2560|SearchProtocolHost.exe   |Microsoft Windows Search Protocol Host            |7.0.7601.17610 |0     |Low         |7      |                                                                                           |
+|2608|svchost.exe              |Host Process for Windows Services                 |6.1.7600.16385 |0     |Normal      |4      |                                                                                           |
+|2628|SAVAdminService.exe      |                                                  |               |0     |Normal      |5      |                                                                                           |
+|2696|ManagementAgentNT.exe    |                                                  |               |0     |Normal      |25     |                                                                                           |
+|2756|LMS.exe                  |                                                  |               |0     |Normal      |4      |                                                                                           |
+|2876|ALsvc.exe                |                                                  |               |0     |Normal      |8      |                                                                                           |
+|2924|RouterNT.exe             |                                                  |               |0     |Normal      |20     |                                                                                           |
+|2968|spa.exe                  |                                                  |               |0     |Normal      |9      |                                                                                           |
+|3020|swc_service.exe          |                                                  |               |0     |Normal      |6      |                                                                                           |
+|3064|svchost.exe              |Host Process for Windows Services                 |6.1.7600.16385 |0     |Normal      |6      |                                                                                           |
+|3076|vmnat.exe                |VMware NAT Service                                |6.5.3.8888     |0     |Normal      |5      |                                                                                           |
+|3124|Ath_CoexAgent.exe        |                                                  |               |0     |Normal      |7      |                                                                                           |
+|3168|Ath_WlanAgent.exe        |                                                  |               |0     |Real-Time   |5      |                                                                                           |
+|3348|svchost.exe              |Host Process for Windows Services                 |6.1.7600.16385 |0     |Normal      |5      |                                                                                           |
+|3352|svchost.exe              |Host Process for Windows Services                 |6.1.7600.16385 |0     |Normal      |6      |                                                                                           |
+|3388|vmnetdhcp.exe            |VMware VMnet DHCP service                         |6.5.3.8888     |0     |Normal      |3      |                                                                                           |
+|3592|ads.exe                  |                                                  |               |0     |Normal      |79     |                                                                                           |
+|3952|sdcservice.exe           |                                                  |               |0     |Normal      |9      |                                                                                           |
+|4128|SATRASummUpgrade74to8.exe|                                                  |1.0.0.0        |0     |Normal      |7      |C:\Users\timh\Desktop\Source XE2\Products\SATRASumm\Upgrade74 to 8                         |
+|4192|WUDFHost.exe             |                                                  |               |0     |Normal      |8      |                                                                                           |
+|4264|taskhost.exe             |                                                  |               |0     |Normal      |11     |                                                                                           |
+|4452|dwm.exe                  |                                                  |               |0     |Normal      |3      |                                                                                           |
+|4540|iusb3mon.exe             |Intel(R) USB 3.0 Monitor                          |1.0.0.120      |0     |Normal      |4      |C:\Program Files (x86)\Intel\Intel(R) USB 3.0 eXtensible Host Controller Driver\Application|
+|4600|IAStorDataMgrSvc.exe     |                                                  |               |0     |Normal      |11     |                                                                                           |
+|4620|rundll32.exe             |Windows host process (Rundll32)                   |6.1.7600.16385 |0     |Normal      |3      |                                                                                           |
+|4672|explorer.exe             |Windows Explorer                                  |6.1.7601.17567 |0     |Normal      |57     |                                                                                           |
+|4812|PresentationFontCache.exe|                                                  |               |0     |Normal      |6      |                                                                                           |
+|4936|RtkNGUI64.exe            |                                                  |               |0     |Normal      |14     |                                                                                           |
+|4964|RAVBg64.exe              |                                                  |               |0     |Normal      |10     |                                                                                           |
+|5000|BtvStack.exe             |                                                  |               |0     |Normal      |76     |                                                                                           |
+|5028|AthBtTray.exe            |                                                  |               |0     |Normal      |17     |                                                                                           |
+|5176|osoupd.exe               |OSO Update                                        |4.0.0.18       |0     |Normal      |2      |C:\Program Files (x86)\CommunicationsClients                                               |
+|5192|MOM.exe                  |Catalyst Control Center: Monitoring program       |2.0.0.0        |0     |Normal      |15     |                                                                                           |
+|5332|vmware-tray.exe          |VMware Tray Process                               |6.5.3.8888     |0     |Normal      |2      |C:\Program Files (x86)\VMware\VMware Workstation                                           |
+|5356|TWCP.exe                 |TabletWorks Control Panel                         |10.9.0.24      |0     |Normal      |2      |C:\Program Files (x86)\GTCO CalComp\TabletWorks                                            |
+|5380|jusched.exe              |Java(TM) Update Scheduler                         |2.1.9.8        |0     |Normal      |2      |C:\Program Files (x86)\Common Files\Java\Java Update                                       |
+|5400|ALMon.exe                |Sophos Endpoint Security and Control              |3.47.115.344   |0     |Normal      |19     |C:\Program Files (x86)\Sophos\AutoUpdate                                                   |
+|5408|svchost.exe              |Host Process for Windows Services                 |6.1.7600.16385 |0     |Normal      |14     |                                                                                           |
+|5460|UNS.exe                  |                                                  |               |0     |Normal      |6      |                                                                                           |
+|5504|TSVNCache.exe            |TortoiseSVN status cache                          |1.7.10.23359   |0     |Normal      |18     |                                                                                           |
+|5740|svchost.exe              |Host Process for Windows Services                 |6.1.7600.16385 |0     |Normal      |14     |                                                                                           |
+|5760|CCC.exe                  |Catalyst Control Center: Host application         |3.5.0.0        |0     |Normal      |26     |                                                                                           |
+|5816|SearchIndexer.exe        |Microsoft Windows Search Indexer                  |7.0.7601.17610 |0     |Normal      |22     |                                                                                           |
+|6148|OUTLOOK.EXE              |Microsoft Outlook                                 |14.0.7113.5000 |0     |Normal      |76     |C:\Program Files (x86)\Microsoft Office\Office14                                           |
+|6168|jucheck.exe              |Java(TM) Update Checker                           |2.1.9.8        |0     |Normal      |6      |C:\Program Files (x86)\Common Files\Java\Java Update                                       |
+|6808|OSPPSVC.EXE              |                                                  |               |0     |Normal      |3      |                                                                                           |
+|7060|IAStorIcon.exe           |IAStorIcon                                        |11.1.0.1006    |0     |Normal      |14     |C:\Program Files (x86)\Intel\Intel(R) Rapid Storage Technology                             |
+|7436|SearchFilterHost.exe     |Microsoft Windows Search Filter Host              |7.0.7601.17610 |0     |Low         |6      |                                                                                           |
+|7592|audiodg.exe              |                                                  |               |0     |Normal      |7      |                                                                                           |
+|7740|UpdateCheck.exe          |Embarcadero RAD Studio Updator                    |16.0.4429.46931|0     |Normal      |4      |C:\ProgramData\Embarcadero\BDS\9.0                                                         |
+|8172|bds.exe                  |Embarcadero RAD Studio for Windows                |16.0.4429.46931|0     |Normal      |23     |C:\Program Files (x86)\Embarcadero\RAD Studio\9.0\bin                                      |
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Assembler Information:
+----------------------------------------------------------------------------
+; adsdata.RaiseError (Line=0 - Offset=0)
+; --------------------------------------
+005F91CD  lea     edx, [ebp+$FFFFFDA5]
+005F91D3  mov     ecx, $00000259                    ; ''...
+005F91D8  call    System._UStrFromArray
+005F91DD  mov     eax, [ebp+$FFFFFDA0]
+005F91E3  push    eax
+005F91E4  mov     eax, [ebp+$08]
+005F91E7  mov     ecx, [eax-$08]
+005F91EA  mov     dl, $01
+005F91EC  mov     eax, dword ptr [adsdata.adsdata]
+005F91F1  call    adsdata.EADSDatabaseError.Create
+005F91F6  call    System._RaiseExcept               ; <-- EXCEPTION
+005F91FB  xor     eax, eax
+005F91FD  pop     edx
+005F91FE  pop     ecx
+005F91FF  pop     ecx
+005F9200  mov     fs:[eax], edx
+005F9203  push    $005F921B                         ; '‹å]ÃU‹ìƒÄø‰Uü‰Eøƒ}ü'
+005F9208  lea     eax, [ebp+$FFFFFDA0]
+005F920E  call    System._UStrClr
+005F9213  ret
+
+Registers:
+-----------------------------
+EAX: 0212CE60   EDI: 0000000D
+EBX: 00000005   ESI: FFFFFFFF
+ECX: 005F4200   ESP: 0018EE48
+EDX: 005F91FB   EIP: 005F91F6
+
+Stack:               Memory Dump:
+------------------   ---------------------------------------------------------------------------
+0018EE48: 0018F0D0 02031080: E8 7D EB E0 FF 33 C0 5A 59 59 64 89 10 68 1B 92  .}...3.ZYYd..h..
+0018EE4C: 00407C54 02031090: 5F 00 8D 85 A0 FD FF FF E8 6D F4 E0 FF C3 E9 BB  _........m......
+0018EE50: 0018F0B4 020310A0: E9 E0 FF EB ED 8B E5 5D C3 90 55 8B EC 83 C4 F8  .......]..U.....
+0018EE54: 00000000 020310B0: 89 55 FC 89 45 F8 83 7D FC 00 74 15 E8 A5 3A E1  .U..E..}..t...:.
+0018EE58: 72724500 020310C0: FF 80 B8 B4 03 00 00 00 75 07 55 E8 3E FF FF FF  ........u.U.>...
+0018EE5C: 3720726F 020310D0: 59 59 59 5D C3 90 55 8B EC 83 C4 F8 53 56 57 89  YYY]..U.....SVW.
+0018EE60: 3A363730 020310E0: 4D F8 89 55 FC 8B F8 8B 45 FC E8 FF F4 E0 FF 33  M..U....E......3
+0018EE64: 20412020 020310F0: C0 55 68 4D 93 5F 00 64 FF 30 64 89 20 85 FF 7E  .UhM._.d.0d. ..~
+0018EE68: 72726F63 02031100: 06 83 7D FC 00 75 0D 8B 45 F8 E8 FB F3 E0 FF E9  ..}..u..E.......
+0018EE6C: 6F707365 02031110: AD 00 00 00 83 FF 01 75 35 8B 55 FC B8 68 93 5F  .......u5.U..h._
+0018EE70: 6E69646E 02031120: 00 E8 30 0A E1 FF 8B D8 8B 45 FC 85 C0 74 05 83  ..0......E...t..
+0018EE74: 72702067 02031130: E8 04 8B 00 8D 55 FC 8B C8 8B C3 92 E8 B1 08 E1  .....U..........
+0018EE78: 72616D69 02031140: FF 8B 45 F8 8B 55 FC E8 9E F7 E0 FF EB 73 33 DB  ..E..U.......s3.
+0018EE7C: 656B2079 02031150: BE 01 00 00 00 3B FE 7E 23 8B 55 FC B8 68 93 5F  .....;.~#.U..h._
+0018EE80: 61762079 02031160: 00 E8 F0 09 E1 FF 8B D8 8D 45 FC 8B CB BA 01 00  .........E......
+0018EE84: 2065756C 02031170: 00 00 E8 7B 08 E1 FF 46 3B FE 7F DD 85 DB 75 0A  ...{...F;.....u.
+
+
+
+EurekaLog 6.1.04
+
+Application:
+-------------------------------------------------------
+  1.1 Start Date      : Thu, 20 Feb 2014 16:19:15 +0000
+  1.2 Name/Description: SATRASummUpgrade74to8.exe
+  1.3 Version Number  : 1.0.0.0
+  1.4 Parameters      : 
+  1.5 Compilation Date: Thu, 20 Feb 2014 16:19:10 +0000
+  1.6 Up Time         : 7 seconds
+
+Exception:
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  2.1 Date          : Thu, 20 Feb 2014 16:19:22 +0000
+  2.2 Address       : 005FCC92
+  2.3 Module Name   : SATRASummUpgrade74to8.exe
+  2.4 Module Version: 1.0.0.0
+  2.5 Type          : EADSDatabaseError
+  2.6 Message       : tblElements: Error 7057:  The record update failed.  The key value produced from this record was not unique, and an index for the current table has the UNIQUE property.  The key value supplied for Elements:PRIMARY is not unique.
+  2.7 ID            : D3EC
+  2.8 Count         : 1
+  2.9 Status        : New
+  2.10 Note         : 
+
+User:
+-------------------------------------------------------
+  3.1 ID        : timh
+  3.2 Name      : itsupport
+  3.3 Email     : 
+  3.4 Company   : 
+  3.5 Privileges: SeIncreaseQuotaPrivilege        - OFF
+                  SeSecurityPrivilege             - OFF
+                  SeTakeOwnershipPrivilege        - OFF
+                  SeLoadDriverPrivilege           - OFF
+                  SeSystemProfilePrivilege        - OFF
+                  SeSystemtimePrivilege           - OFF
+                  SeProfileSingleProcessPrivilege - OFF
+                  SeIncreaseBasePriorityPrivilege - OFF
+                  SeCreatePagefilePrivilege       - OFF
+                  SeBackupPrivilege               - OFF
+                  SeRestorePrivilege              - OFF
+                  SeShutdownPrivilege             - OFF
+                  SeDebugPrivilege                - OFF
+                  SeSystemEnvironmentPrivilege    - OFF
+                  SeChangeNotifyPrivilege         - ON
+                  SeRemoteShutdownPrivilege       - OFF
+                  SeUndockPrivilege               - OFF
+                  SeManageVolumePrivilege         - OFF
+                  SeImpersonatePrivilege          - ON
+                  SeCreateGlobalPrivilege         - ON
+                  SeIncreaseWorkingSetPrivilege   - OFF
+                  SeTimeZonePrivilege             - OFF
+                  SeCreateSymbolicLinkPrivilege   - OFF
+
+Active Controls:
+-------------------------------------------------
+  4.1 Form Class   : TfmUpgrade
+  4.2 Form Text    : SATRASumm Upgrade 7.4 to 8.0
+  4.3 Control Class: TfmUpgrade
+  4.4 Control Text : 
+
+Computer:
+-------------------------------------------------------------------------
+  5.1 Name          : D0079
+  5.2 Total Memory  : 8153 Mb
+  5.3 Free Memory   : 5611 Mb
+  5.4 Total Disk    : 465.66 Gb
+  5.5 Free Disk     : 312.73 Gb
+  5.6 System Up Time: 6 hours, 27 minutes, 45 seconds
+  5.7 Processor     : Intel(R) Core(TM) i7-3770 CPU @ 3.40GHz
+  5.8 Display Mode  : 1680 x 1050, 32 bit
+  5.9 Display DPI   : 96
+  5.10 Video Card   : AMD Radeon HD 7570 (driver 8.911.0.0 - RAM 1024 MB)
+  5.11 Printer      : HP Universal Printing PCL 5 (driver 6.1.7601.17514)
+
+Operating System:
+--------------------------------------------
+  6.1 Type    : Microsoft Windows 7 (64 bit)
+  6.2 Build # : 7601
+  6.3 Update  : Service Pack 1
+  6.4 Language: English
+  6.5 Charset : 0
+
+Network:
+---------------------------------------------------------------------
+  7.1 IP Address: 192.168.022.137 - 192.168.126.001 - 192.168.145.001
+  7.2 Submask   : 255.255.252.000 - 255.255.255.000 - 255.255.255.000
+  7.3 Gateway   : 192.168.020.001 - 000.000.000.000 - 000.000.000.000
+  7.4 DNS 1     : 192.168.025.047 - 000.000.000.000 - 000.000.000.000
+  7.5 DNS 2     : 192.168.100.004 - 000.000.000.000 - 000.000.000.000
+  7.6 DHCP      : ON              - OFF             - OFF            
+
+Call Stack Information:
+--------------------------------------------------------------------------------------------------
+|Address |Module                   |Unit                     |Class     |Procedure/Method|Line   |
+--------------------------------------------------------------------------------------------------
+|*Exception Thread: ID=9916; Priority=0; Class=; [Main]                                          |
+|------------------------------------------------------------------------------------------------|
+|005FCC92|SATRASummUpgrade74to8.exe|                         |          |                |       |
+|00623C87|SATRASummUpgrade74to8.exe|Main.pas                 |TfmUpgrade|CuttingElements |162[18]|
+|00623B00|SATRASummUpgrade74to8.exe|Main.pas                 |TfmUpgrade|CuttingElements |144[0] |
+|006238C7|SATRASummUpgrade74to8.exe|Main.pas                 |TfmUpgrade|btnUpgradeClick |111[60]|
+|76537033|USER32.dll               |                         |          |GetWindowLongW  |       |
+|765396C0|USER32.dll               |                         |          |SendMessageW    |       |
+|76540D48|USER32.dll               |                         |          |CallWindowProcW |       |
+|76540D32|USER32.dll               |                         |          |CallWindowProcW |       |
+|76542ABC|USER32.dll               |                         |          |GetCapture      |       |
+|76542AAC|USER32.dll               |                         |          |GetCapture      |       |
+|76537885|USER32.dll               |                         |          |DispatchMessageW|       |
+|7653787B|USER32.dll               |                         |          |DispatchMessageW|       |
+|0062C67F|SATRASummUpgrade74to8.exe|SATRASummUpgrade74to8.dpr|          |                |13[3]  |
+--------------------------------------------------------------------------------------------------
+
+Modules Information:
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|Handle  |Name                     |Description                                        |Version           |Size    |Modified           |Path                                                                                                         |
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|00400000|SATRASummUpgrade74to8.exe|                                                   |1.0.0.0           |2570752 |2014-02-20 16:19:12|C:\Users\timh\Desktop\Source XE2\Products\SATRASumm\Upgrade74 to 8                                           |
+|12170000|ACE32.DLL                |Advantage Client Engine DLL                        |11.0.0.0          |1652624 |2012-06-25 11:00:00|C:\Windows\system32                                                                                          |
+|187B0000|axcws32.dll              |Advantage 32-bit remote communication library      |11.0.0.0          |227216  |2012-06-25 11:00:00|C:\Windows\system32                                                                                          |
+|4A800000|aicu32.dll               |IBM ICU Common DLL                                 |4.0.0.1           |2037648 |2012-06-25 11:00:00|C:\Windows\system32                                                                                          |
+|6E8B0000|msimg32.dll              |GDIEXT Client DLL                                  |6.1.7600.16385    |4608    |2009-07-14 01:15:46|C:\Windows\system32                                                                                          |
+|70280000|WINSTA.dll               |Winstation Library                                 |6.1.7601.17514    |156672  |2010-11-21 03:23:56|C:\Windows\system32                                                                                          |
+|704F0000|MPR.dll                  |Multiple Provider Router DLL                       |6.1.7600.16385    |64000   |2009-07-14 01:15:42|C:\Windows\system32                                                                                          |
+|70570000|uxtheme.dll              |Microsoft UxTheme Library                          |6.1.7600.16385    |245760  |2009-07-14 01:11:26|C:\Windows\system32                                                                                          |
+|70AE0000|wtsapi32.dll             |Windows Remote Desktop Session Host Server SDK APIs|6.1.7601.17514    |40448   |2010-11-21 03:23:56|C:\Windows\system32                                                                                          |
+|714E0000|mswsock.dll              |Microsoft Windows Sockets 2.0 Service Provider     |6.1.7601.18254    |231424  |2013-09-08 02:04:00|C:\Windows\system32                                                                                          |
+|71A90000|wsock32.dll              |Windows Socket 32-Bit DLL                          |6.1.7600.16385    |15360   |2009-07-14 01:16:22|C:\Windows\system32                                                                                          |
+|723F0000|comctl32.dll             |User Experience Controls Library                   |6.10.7601.17514   |1680896 |2010-11-21 03:23:56|C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.17514_none_41e6975e2bd6f2b2|
+|72590000|winspool.drv             |Windows Spooler Driver                             |6.1.7601.17514    |320000  |2010-11-21 03:24:10|C:\Windows\system32                                                                                          |
+|72C40000|version.dll              |Version Checking and File Installation Libraries   |6.1.7600.16385    |21504   |2009-07-14 01:16:18|C:\Windows\system32                                                                                          |
+|74AF0000|rsaenh.dll               |Microsoft Enhanced Cryptographic Provider          |6.1.7600.16385    |242936  |2009-07-14 01:17:56|C:\Windows\system32                                                                                          |
+|74F30000|CRYPTSP.dll              |Cryptographic Service Provider API                 |6.1.7600.16385    |78848   |2009-07-14 01:15:08|C:\Windows\system32                                                                                          |
+|75120000|sophos_detoured.dll      |Sophos Buffer Overrun Protection                   |10.2.10.4         |275352  |2013-11-14 10:15:28|C:\Program Files (x86)\Sophos\Sophos Anti-Virus                                                              |
+|75530000|CRYPTBASE.dll            |Base cryptographic API DLL                         |6.1.7600.16385    |36864   |2009-07-14 01:15:08|C:\Windows\syswow64                                                                                          |
+|75540000|SspiCli.dll              |Security Support Provider Interface                |6.1.7601.18270    |96768   |2013-09-25 01:58:18|C:\Windows\syswow64                                                                                          |
+|755A0000|WS2_32.dll               |Windows Socket 2.0 32-Bit DLL                      |6.1.7601.17514    |206848  |2010-11-21 03:23:56|C:\Windows\syswow64                                                                                          |
+|755E0000|MSCTF.dll                |MSCTF Server DLL                                   |6.1.7600.16385    |828928  |2009-07-14 01:15:44|C:\Windows\syswow64                                                                                          |
+|75740000|GDI32.dll                |GDI Client DLL                                     |6.1.7601.18275    |311808  |2013-10-03 02:00:46|C:\Windows\syswow64                                                                                          |
+|75800000|shell32.dll              |Windows Shell Common Dll                           |6.1.7601.18222    |12872704|2013-07-26 01:56:00|C:\Windows\syswow64                                                                                          |
+|76450000|WINTRUST.dll             |Microsoft Trust Verification APIs                  |6.1.7601.18205    |175104  |2013-07-09 04:52:12|C:\Windows\syswow64                                                                                          |
+|76480000|USP10.dll                |Uniscribe Unicode script processor                 |1.626.7601.18009  |626688  |2012-11-22 04:45:04|C:\Windows\syswow64                                                                                          |
+|76520000|USER32.dll               |Multi-User Windows USER API Client DLL             |6.1.7601.17514    |833024  |2010-11-21 03:24:22|C:\Windows\syswow64                                                                                          |
+|76620000|ole32.dll                |Microsoft OLE for Windows                          |6.1.7601.17514    |1414144 |2010-11-21 03:24:02|C:\Windows\syswow64                                                                                          |
+|76780000|IMM32.DLL                |Multi-User Windows IMM32 API Client DLL            |6.1.7601.17514    |119808  |2010-11-21 03:24:26|C:\Windows\system32                                                                                          |
+|767E0000|MSASN1.dll               |ASN.1 Runtime APIs                                 |6.1.7601.17514    |34304   |2010-11-21 03:23:50|C:\Windows\syswow64                                                                                          |
+|769D0000|LPK.dll                  |Language Pack                                      |6.1.7601.18177    |25600   |2013-06-06 04:57:02|C:\Windows\syswow64                                                                                          |
+|76B00000|oleaut32.dll             |                                                   |6.1.7601.17676    |571904  |2011-08-27 04:26:28|C:\Windows\syswow64                                                                                          |
+|76C00000|RPCRT4.dll               |Remote Procedure Call Runtime                      |6.1.7601.18205    |663552  |2013-07-09 04:52:34|C:\Windows\syswow64                                                                                          |
+|76CF0000|CLBCatQ.DLL              |COM+ Configuration Catalog                         |2001.12.8530.16385|522240  |2009-07-14 01:15:04|C:\Windows\syswow64                                                                                          |
+|76D80000|msvcrt.dll               |Windows NT CRT DLL                                 |7.0.7601.17744    |690688  |2011-12-16 07:53:00|C:\Windows\syswow64                                                                                          |
+|76E30000|ADVAPI32.dll             |Advanced Windows 32 Base API                       |6.1.7601.18247    |640512  |2013-08-29 01:48:18|C:\Windows\syswow64                                                                                          |
+|76F50000|sechost.dll              |Host for SCM/SDDL/LSA Lookup APIs                  |6.1.7600.16385    |92160   |2009-07-14 01:16:14|C:\Windows\SysWOW64                                                                                          |
+|76FC0000|KERNELBASE.dll           |Windows NT BASE API Client DLL                     |6.1.7601.18229    |274944  |2013-08-02 01:50:44|C:\Windows\syswow64                                                                                          |
+|77010000|kernel32.dll             |Windows NT BASE API Client DLL                     |6.1.7601.18229    |1114112 |2013-08-02 01:50:42|C:\Windows\syswow64                                                                                          |
+|77120000|CRYPT32.dll              |Crypto API32                                       |6.1.7601.18277    |1168384 |2013-10-05 19:57:26|C:\Windows\syswow64                                                                                          |
+|77360000|SHLWAPI.dll              |Shell Light-weight Utility Library                 |6.1.7601.17514    |350208  |2010-11-21 03:23:50|C:\Windows\syswow64                                                                                          |
+|773C0000|NSI.dll                  |NSI User-mode interface DLL                        |6.1.7600.16385    |8704    |2009-07-14 01:16:12|C:\Windows\syswow64                                                                                          |
+|77570000|imagehlp.dll             |Windows NT Image Helper                            |6.1.7601.18288    |159232  |2013-10-19 01:37:00|C:\Windows\syswow64                                                                                          |
+|77E30000|PSAPI.DLL                |Process Status Helper                              |6.1.7600.16385    |6144    |2009-07-14 01:16:14|C:\Windows\syswow64                                                                                          |
+|77E60000|ntdll.dll                |NT Layer DLL                                       |6.1.7601.18247    |1292192 |2013-08-29 01:50:32|C:\Windows\SysWOW64                                                                                          |
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Processes Information:
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|ID  |Name                     |Description                                       |Version        |Memory|Priority    |Threads|Path                                                                                       |
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|0   |[System Process]         |                                                  |               |0     |            |8      |                                                                                           |
+|4   |System                   |                                                  |               |0     |Normal      |190    |                                                                                           |
+|400 |atiesrxx.exe             |                                                  |               |0     |Normal      |6      |                                                                                           |
+|432 |smss.exe                 |                                                  |               |0     |Above-Normal|2      |                                                                                           |
+|476 |svchost.exe              |Host Process for Windows Services                 |6.1.7600.16385 |0     |Normal      |22     |                                                                                           |
+|600 |csrss.exe                |                                                  |               |0     |High        |9      |                                                                                           |
+|676 |wininit.exe              |Windows Start-Up Application                      |6.1.7600.16385 |0     |High        |3      |                                                                                           |
+|696 |csrss.exe                |                                                  |               |0     |High        |11     |                                                                                           |
+|740 |services.exe             |                                                  |               |0     |Normal      |8      |                                                                                           |
+|756 |lsass.exe                |                                                  |               |0     |Normal      |10     |                                                                                           |
+|764 |lsm.exe                  |                                                  |               |0     |Normal      |10     |                                                                                           |
+|820 |winlogon.exe             |                                                  |               |0     |High        |3      |                                                                                           |
+|912 |svchost.exe              |Host Process for Windows Services                 |6.1.7600.16385 |0     |Normal      |17     |                                                                                           |
+|992 |svchost.exe              |Host Process for Windows Services                 |6.1.7600.16385 |0     |Normal      |12     |                                                                                           |
+|1056|svchost.exe              |Host Process for Windows Services                 |6.1.7600.16385 |0     |Normal      |36     |                                                                                           |
+|1088|svchost.exe              |Host Process for Windows Services                 |6.1.7600.16385 |0     |Normal      |18     |                                                                                           |
+|1092|svchost.exe              |Host Process for Windows Services                 |6.1.7600.16385 |0     |Normal      |30     |                                                                                           |
+|1124|svchost.exe              |Host Process for Windows Services                 |6.1.7600.16385 |0     |Normal      |40     |                                                                                           |
+|1244|svchost.exe              |Host Process for Windows Services                 |6.1.7600.16385 |0     |Normal      |7      |                                                                                           |
+|1368|SavService.exe           |                                                  |               |0     |Normal      |59     |                                                                                           |
+|1392|atieclxx.exe             |                                                  |               |0     |Normal      |10     |                                                                                           |
+|1504|spoolsv.exe              |                                                  |               |0     |Normal      |15     |                                                                                           |
+|1852|svchost.exe              |Host Process for Windows Services                 |6.1.7600.16385 |0     |Normal      |24     |                                                                                           |
+|1900|SCFService.exe           |                                                  |               |0     |Normal      |12     |                                                                                           |
+|1992|SCFManager.exe           |                                                  |               |0     |Normal      |9      |                                                                                           |
+|2208|swi_service.exe          |                                                  |               |0     |Normal      |14     |                                                                                           |
+|2224|armsvc.exe               |                                                  |               |0     |Normal      |4      |                                                                                           |
+|2260|AERTSr64.exe             |                                                  |               |0     |Normal      |4      |                                                                                           |
+|2284|AdminService.exe         |                                                  |               |0     |Normal      |5      |                                                                                           |
+|2312|BSQLServer.exe           |BlackfishSQL Server Launcher                      |8.0.2804.9245  |0     |Normal      |6      |                                                                                           |
+|2384|HeciServer.exe           |Intel(R) Capability Licensing Service Interface   |1.23.219.2     |0     |Normal      |4      |                                                                                           |
+|2436|Jhi_service.exe          |Intel(R) Dynamic Application Loader Host Interface|8.0.0.1399     |0     |Normal      |4      |                                                                                           |
+|2468|svchost.exe              |Host Process for Windows Services                 |6.1.7600.16385 |0     |Normal      |4      |                                                                                           |
+|2492|osoausvc.exe             |                                                  |               |0     |Normal      |8      |                                                                                           |
+|2608|svchost.exe              |Host Process for Windows Services                 |6.1.7600.16385 |0     |Normal      |4      |                                                                                           |
+|2628|SAVAdminService.exe      |                                                  |               |0     |Normal      |5      |                                                                                           |
+|2696|ManagementAgentNT.exe    |                                                  |               |0     |Normal      |24     |                                                                                           |
+|2756|LMS.exe                  |                                                  |               |0     |Normal      |4      |                                                                                           |
+|2876|ALsvc.exe                |                                                  |               |0     |Normal      |8      |                                                                                           |
+|2924|RouterNT.exe             |                                                  |               |0     |Normal      |20     |                                                                                           |
+|2968|spa.exe                  |                                                  |               |0     |Normal      |9      |                                                                                           |
+|3020|swc_service.exe          |                                                  |               |0     |Normal      |5      |                                                                                           |
+|3064|svchost.exe              |Host Process for Windows Services                 |6.1.7600.16385 |0     |Normal      |6      |                                                                                           |
+|3076|vmnat.exe                |VMware NAT Service                                |6.5.3.8888     |0     |Normal      |5      |                                                                                           |
+|3124|Ath_CoexAgent.exe        |                                                  |               |0     |Normal      |7      |                                                                                           |
+|3168|Ath_WlanAgent.exe        |                                                  |               |0     |Real-Time   |5      |                                                                                           |
+|3348|svchost.exe              |Host Process for Windows Services                 |6.1.7600.16385 |0     |Normal      |5      |                                                                                           |
+|3352|svchost.exe              |Host Process for Windows Services                 |6.1.7600.16385 |0     |Normal      |6      |                                                                                           |
+|3388|vmnetdhcp.exe            |VMware VMnet DHCP service                         |6.5.3.8888     |0     |Normal      |3      |                                                                                           |
+|3932|dexplore.exe             |Microsoft Document Explorer                       |9.0.21022.8    |0     |Normal      |31     |C:\Program Files (x86)\Common Files\Microsoft Shared\Help 9                                |
+|3952|sdcservice.exe           |                                                  |               |0     |Normal      |9      |                                                                                           |
+|4192|WUDFHost.exe             |                                                  |               |0     |Normal      |8      |                                                                                           |
+|4264|taskhost.exe             |                                                  |               |0     |Normal      |11     |                                                                                           |
+|4452|dwm.exe                  |                                                  |               |0     |Normal      |3      |                                                                                           |
+|4540|iusb3mon.exe             |Intel(R) USB 3.0 Monitor                          |1.0.0.120      |0     |Normal      |4      |C:\Program Files (x86)\Intel\Intel(R) USB 3.0 eXtensible Host Controller Driver\Application|
+|4600|IAStorDataMgrSvc.exe     |                                                  |               |0     |Normal      |11     |                                                                                           |
+|4620|rundll32.exe             |Windows host process (Rundll32)                   |6.1.7600.16385 |0     |Normal      |3      |                                                                                           |
+|4672|explorer.exe             |Windows Explorer                                  |6.1.7601.17567 |0     |Normal      |79     |                                                                                           |
+|4812|PresentationFontCache.exe|                                                  |               |0     |Normal      |6      |                                                                                           |
+|4936|RtkNGUI64.exe            |                                                  |               |0     |Normal      |14     |                                                                                           |
+|4964|RAVBg64.exe              |                                                  |               |0     |Normal      |10     |                                                                                           |
+|5000|BtvStack.exe             |                                                  |               |0     |Normal      |76     |                                                                                           |
+|5028|AthBtTray.exe            |                                                  |               |0     |Normal      |17     |                                                                                           |
+|5176|osoupd.exe               |OSO Update                                        |4.0.0.18       |0     |Normal      |2      |C:\Program Files (x86)\CommunicationsClients                                               |
+|5192|MOM.exe                  |Catalyst Control Center: Monitoring program       |2.0.0.0        |0     |Normal      |15     |                                                                                           |
+|5332|vmware-tray.exe          |VMware Tray Process                               |6.5.3.8888     |0     |Normal      |2      |C:\Program Files (x86)\VMware\VMware Workstation                                           |
+|5356|TWCP.exe                 |TabletWorks Control Panel                         |10.9.0.24      |0     |Normal      |2      |C:\Program Files (x86)\GTCO CalComp\TabletWorks                                            |
+|5380|jusched.exe              |Java(TM) Update Scheduler                         |2.1.9.8        |0     |Normal      |2      |C:\Program Files (x86)\Common Files\Java\Java Update                                       |
+|5400|ALMon.exe                |Sophos Endpoint Security and Control              |3.47.115.344   |0     |Normal      |19     |C:\Program Files (x86)\Sophos\AutoUpdate                                                   |
+|5408|svchost.exe              |Host Process for Windows Services                 |6.1.7600.16385 |0     |Normal      |15     |                                                                                           |
+|5460|UNS.exe                  |                                                  |               |0     |Normal      |6      |                                                                                           |
+|5504|TSVNCache.exe            |TortoiseSVN status cache                          |1.7.10.23359   |0     |Normal      |18     |                                                                                           |
+|5740|svchost.exe              |Host Process for Windows Services                 |6.1.7600.16385 |0     |Normal      |15     |                                                                                           |
+|5760|CCC.exe                  |Catalyst Control Center: Host application         |3.5.0.0        |0     |Normal      |30     |                                                                                           |
+|5816|SearchIndexer.exe        |Microsoft Windows Search Indexer                  |7.0.7601.17610 |0     |Normal      |20     |                                                                                           |
+|6148|OUTLOOK.EXE              |Microsoft Outlook                                 |14.0.7113.5000 |0     |Normal      |77     |C:\Program Files (x86)\Microsoft Office\Office14                                           |
+|6168|jucheck.exe              |Java(TM) Update Checker                           |2.1.9.8        |0     |Normal      |6      |C:\Program Files (x86)\Common Files\Java\Java Update                                       |
+|6808|OSPPSVC.EXE              |                                                  |               |0     |Normal      |3      |                                                                                           |
+|7060|IAStorIcon.exe           |IAStorIcon                                        |11.1.0.1006    |0     |Normal      |14     |C:\Program Files (x86)\Intel\Intel(R) Rapid Storage Technology                             |
+|7100|dexplore.exe             |Microsoft Document Explorer                       |9.0.21022.8    |0     |Normal      |32     |C:\Program Files (x86)\Common Files\Microsoft Shared\Help 9                                |
+|7464|SearchProtocolHost.exe   |Microsoft Windows Search Protocol Host            |7.0.7601.17610 |0     |Low         |7      |                                                                                           |
+|7740|UpdateCheck.exe          |Embarcadero RAD Studio Updator                    |16.0.4429.46931|0     |Normal      |4      |C:\ProgramData\Embarcadero\BDS\9.0                                                         |
+|8268|audiodg.exe              |                                                  |               |0     |Normal      |7      |                                                                                           |
+|8612|ads.exe                  |                                                  |               |0     |Normal      |79     |                                                                                           |
+|9196|MpCmdRun.exe             |                                                  |               |0     |Normal      |6      |                                                                                           |
+|9472|SATRASummUpgrade74to8.exe|                                                  |1.0.0.0        |0     |Normal      |7      |C:\Users\timh\Desktop\Source XE2\Products\SATRASumm\Upgrade74 to 8                         |
+|9696|SearchProtocolHost.exe   |Microsoft Windows Search Protocol Host            |7.0.7601.17610 |0     |Low         |13     |C:\Windows\sysWow64                                                                        |
+|9740|SearchFilterHost.exe     |Microsoft Windows Search Filter Host              |7.0.7601.17610 |0     |Low         |5      |                                                                                           |
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Assembler Information:
+----------------------------------------------------------------------------
+; adsdata.RaiseError (Line=0 - Offset=0)
+; --------------------------------------
+005FCC69  lea     edx, [ebp+$FFFFFDA5]
+005FCC6F  mov     ecx, $00000259                    ; ''...
+005FCC74  call    System._UStrFromArray
+005FCC79  mov     eax, [ebp+$FFFFFDA0]
+005FCC7F  push    eax
+005FCC80  mov     eax, [ebp+$08]
+005FCC83  mov     ecx, [eax-$08]
+005FCC86  mov     dl, $01
+005FCC88  mov     eax, dword ptr [adsdata.adsdata]
+005FCC8D  call    adsdata.EADSDatabaseError.Create
+005FCC92  call    System._RaiseExcept               ; <-- EXCEPTION
+005FCC97  xor     eax, eax
+005FCC99  pop     edx
+005FCC9A  pop     ecx
+005FCC9B  pop     ecx
+005FCC9C  mov     fs:[eax], edx
+005FCC9F  push    $005FCCB7                         ; '‹å]ÃU‹ìƒÄø‰Uü‰Eøƒ}ü'
+005FCCA4  lea     eax, [ebp+$FFFFFDA0]
+005FCCAA  call    System._UStrClr
+005FCCAF  ret
+
+Registers:
+-----------------------------
+EAX: 0221CE60   EDI: 00000005
+EBX: 00000005   ESI: FFFFFFFF
+ECX: 005F7D00   ESP: 0018F114
+EDX: 005FCC97   EIP: 005FCC92
+
+Stack:               Memory Dump:
+------------------   ---------------------------------------------------------------------------
+0018F114: 0018F39C 02110010: E8 81 A5 E0 FF 33 C0 5A 59 59 64 89 10 68 B7 CC  .....3.ZYYd..h..
+0018F118: 004070F4 02110020: 5F 00 8D 85 A0 FD FF FF E8 71 AE E0 FF C3 E9 BF  _........q......
+0018F11C: 0018F380 02110030: A3 E0 FF EB ED 8B E5 5D C3 90 55 8B EC 83 C4 F8  .......]..U.....
+0018F120: 00000000 02110040: 89 55 FC 89 45 F8 83 7D FC 00 74 15 E8 A9 F4 E0  .U..E..}..t.....
+0018F124: 727245C9 02110050: FF 80 B8 B4 03 00 00 00 75 07 55 E8 3E FF FF FF  ........u.U.>...
+0018F128: 3720726F 02110060: 59 59 59 5D C3 90 55 8B EC 83 C4 F8 53 56 57 89  YYY]..U.....SVW.
+0018F12C: 3A373530 02110070: 4D F8 89 55 FC 8B F8 8B 45 FC E8 03 AF E0 FF 33  M..U....E......3
+0018F130: 68542020 02110080: C0 55 68 E9 CD 5F 00 64 FF 30 64 89 20 85 FF 7E  .Uh.._.d.0d. ..~
+0018F134: 65722065 02110090: 06 83 7D FC 00 75 0D 8B 45 F8 E8 FF AD E0 FF E9  ..}..u..E.......
+0018F138: 64726F63 021100A0: AD 00 00 00 83 FF 01 75 35 8B 55 FC B8 04 CE 5F  .......u5.U...._
+0018F13C: 64707520 021100B0: 00 E8 34 C4 E0 FF 8B D8 8B 45 FC 85 C0 74 05 83  ..4......E...t..
+0018F140: 20657461 021100C0: E8 04 8B 00 8D 55 FC 8B C8 8B C3 92 E8 B5 C2 E0  .....U..........
+0018F144: 6C696166 021100D0: FF 8B 45 F8 8B 55 FC E8 A2 B1 E0 FF EB 73 33 DB  ..E..U.......s3.
+0018F148: 202E6465 021100E0: BE 01 00 00 00 3B FE 7E 23 8B 55 FC B8 04 CE 5F  .....;.~#.U...._
+0018F14C: 65685420 021100F0: 00 E8 F4 C3 E0 FF 8B D8 8D 45 FC 8B CB BA 01 00  .........E......
+0018F150: 79656B20 02110100: 00 00 E8 7F C2 E0 FF 46 3B FE 7F DD 85 DB 75 0A  .......F;.....u.
+
+
+
+EurekaLog 6.1.04
+
+Application:
+-------------------------------------------------------
+  1.1 Start Date      : Thu, 20 Feb 2014 16:32:59 +0000
+  1.2 Name/Description: SATRASummUpgrade74to8.exe
+  1.3 Version Number  : 1.0.0.0
+  1.4 Parameters      : 
+  1.5 Compilation Date: Thu, 20 Feb 2014 16:32:21 +0000
+  1.6 Up Time         : 1 second
+
+Exception:
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  2.1 Date          : Thu, 20 Feb 2014 16:33:01 +0000
+  2.2 Address       : 005FCC92
+  2.3 Module Name   : SATRASummUpgrade74to8.exe
+  2.4 Module Version: 1.0.0.0
+  2.5 Type          : EADSDatabaseError
+  2.6 Message       : tblElements: Error 7057:  The record update failed.  The key value produced from this record was not unique, and an index for the current table has the UNIQUE property.  The key value supplied for Elements:PRIMARY is not unique.
+  2.7 ID            : D3EC
+  2.8 Count         : 1
+  2.9 Status        : New
+  2.10 Note         : 
+
+User:
+-------------------------------------------------------
+  3.1 ID        : timh
+  3.2 Name      : itsupport
+  3.3 Email     : 
+  3.4 Company   : 
+  3.5 Privileges: SeIncreaseQuotaPrivilege        - OFF
+                  SeSecurityPrivilege             - OFF
+                  SeTakeOwnershipPrivilege        - OFF
+                  SeLoadDriverPrivilege           - OFF
+                  SeSystemProfilePrivilege        - OFF
+                  SeSystemtimePrivilege           - OFF
+                  SeProfileSingleProcessPrivilege - OFF
+                  SeIncreaseBasePriorityPrivilege - OFF
+                  SeCreatePagefilePrivilege       - OFF
+                  SeBackupPrivilege               - OFF
+                  SeRestorePrivilege              - OFF
+                  SeShutdownPrivilege             - OFF
+                  SeDebugPrivilege                - OFF
+                  SeSystemEnvironmentPrivilege    - OFF
+                  SeChangeNotifyPrivilege         - ON
+                  SeRemoteShutdownPrivilege       - OFF
+                  SeUndockPrivilege               - OFF
+                  SeManageVolumePrivilege         - OFF
+                  SeImpersonatePrivilege          - ON
+                  SeCreateGlobalPrivilege         - ON
+                  SeIncreaseWorkingSetPrivilege   - OFF
+                  SeTimeZonePrivilege             - OFF
+                  SeCreateSymbolicLinkPrivilege   - OFF
+
+Active Controls:
+-------------------------------------------------
+  4.1 Form Class   : TfmUpgrade
+  4.2 Form Text    : SATRASumm Upgrade 7.4 to 8.0
+  4.3 Control Class: TfmUpgrade
+  4.4 Control Text : 
+
+Computer:
+-------------------------------------------------------------------------
+  5.1 Name          : D0079
+  5.2 Total Memory  : 8153 Mb
+  5.3 Free Memory   : 5584 Mb
+  5.4 Total Disk    : 465.66 Gb
+  5.5 Free Disk     : 312.48 Gb
+  5.6 System Up Time: 6 hours, 41 minutes, 23 seconds
+  5.7 Processor     : Intel(R) Core(TM) i7-3770 CPU @ 3.40GHz
+  5.8 Display Mode  : 1680 x 1050, 32 bit
+  5.9 Display DPI   : 96
+  5.10 Video Card   : AMD Radeon HD 7570 (driver 8.911.0.0 - RAM 1024 MB)
+  5.11 Printer      : HP Universal Printing PCL 5 (driver 6.1.7601.17514)
+
+Operating System:
+--------------------------------------------
+  6.1 Type    : Microsoft Windows 7 (64 bit)
+  6.2 Build # : 7601
+  6.3 Update  : Service Pack 1
+  6.4 Language: English
+  6.5 Charset : 0
+
+Network:
+---------------------------------------------------------------------
+  7.1 IP Address: 192.168.022.137 - 192.168.126.001 - 192.168.145.001
+  7.2 Submask   : 255.255.252.000 - 255.255.255.000 - 255.255.255.000
+  7.3 Gateway   : 192.168.020.001 - 000.000.000.000 - 000.000.000.000
+  7.4 DNS 1     : 192.168.025.047 - 000.000.000.000 - 000.000.000.000
+  7.5 DNS 2     : 192.168.100.004 - 000.000.000.000 - 000.000.000.000
+  7.6 DHCP      : ON              - OFF             - OFF            
+
+Call Stack Information:
+--------------------------------------------------------------------------------------------------
+|Address |Module                   |Unit                     |Class     |Procedure/Method|Line   |
+--------------------------------------------------------------------------------------------------
+|*Exception Thread: ID=7756; Priority=0; Class=; [Main]                                          |
+|------------------------------------------------------------------------------------------------|
+|005FCC92|SATRASummUpgrade74to8.exe|                         |          |                |       |
+|00623C87|SATRASummUpgrade74to8.exe|Main.pas                 |TfmUpgrade|CuttingElements |162[18]|
+|00623B00|SATRASummUpgrade74to8.exe|Main.pas                 |TfmUpgrade|CuttingElements |144[0] |
+|006238C7|SATRASummUpgrade74to8.exe|Main.pas                 |TfmUpgrade|btnUpgradeClick |111[60]|
+|76537033|USER32.dll               |                         |          |GetWindowLongW  |       |
+|765396C0|USER32.dll               |                         |          |SendMessageW    |       |
+|76540D48|USER32.dll               |                         |          |CallWindowProcW |       |
+|76540D32|USER32.dll               |                         |          |CallWindowProcW |       |
+|76542ABC|USER32.dll               |                         |          |GetCapture      |       |
+|76542AAC|USER32.dll               |                         |          |GetCapture      |       |
+|76537885|USER32.dll               |                         |          |DispatchMessageW|       |
+|7653787B|USER32.dll               |                         |          |DispatchMessageW|       |
+|0062C67F|SATRASummUpgrade74to8.exe|SATRASummUpgrade74to8.dpr|          |                |13[3]  |
+--------------------------------------------------------------------------------------------------
+
+Modules Information:
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|Handle  |Name                     |Description                                        |Version           |Size    |Modified           |Path                                                                                                         |
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|00400000|SATRASummUpgrade74to8.exe|                                                   |1.0.0.0           |2568704 |2014-02-20 16:32:22|C:\Users\timh\Desktop\Source XE2\Products\SATRASumm\Upgrade74 to 8                                           |
+|12170000|ACE32.DLL                |Advantage Client Engine DLL                        |11.0.0.0          |1652624 |2012-06-25 11:00:00|C:\Windows\system32                                                                                          |
+|187B0000|axcws32.dll              |Advantage 32-bit remote communication library      |11.0.0.0          |227216  |2012-06-25 11:00:00|C:\Windows\system32                                                                                          |
+|4A800000|aicu32.dll               |IBM ICU Common DLL                                 |4.0.0.1           |2037648 |2012-06-25 11:00:00|C:\Windows\system32                                                                                          |
+|6E8B0000|msimg32.dll              |GDIEXT Client DLL                                  |6.1.7600.16385    |4608    |2009-07-14 01:15:46|C:\Windows\system32                                                                                          |
+|70280000|WINSTA.dll               |Winstation Library                                 |6.1.7601.17514    |156672  |2010-11-21 03:23:56|C:\Windows\system32                                                                                          |
+|704F0000|MPR.dll                  |Multiple Provider Router DLL                       |6.1.7600.16385    |64000   |2009-07-14 01:15:42|C:\Windows\system32                                                                                          |
+|70570000|uxtheme.dll              |Microsoft UxTheme Library                          |6.1.7600.16385    |245760  |2009-07-14 01:11:26|C:\Windows\system32                                                                                          |
+|70AE0000|wtsapi32.dll             |Windows Remote Desktop Session Host Server SDK APIs|6.1.7601.17514    |40448   |2010-11-21 03:23:56|C:\Windows\system32                                                                                          |
+|714E0000|mswsock.dll              |Microsoft Windows Sockets 2.0 Service Provider     |6.1.7601.18254    |231424  |2013-09-08 02:04:00|C:\Windows\system32                                                                                          |
+|71A90000|wsock32.dll              |Windows Socket 32-Bit DLL                          |6.1.7600.16385    |15360   |2009-07-14 01:16:22|C:\Windows\system32                                                                                          |
+|723F0000|comctl32.dll             |User Experience Controls Library                   |6.10.7601.17514   |1680896 |2010-11-21 03:23:56|C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.17514_none_41e6975e2bd6f2b2|
+|72590000|winspool.drv             |Windows Spooler Driver                             |6.1.7601.17514    |320000  |2010-11-21 03:24:10|C:\Windows\system32                                                                                          |
+|72C40000|version.dll              |Version Checking and File Installation Libraries   |6.1.7600.16385    |21504   |2009-07-14 01:16:18|C:\Windows\system32                                                                                          |
+|74AF0000|rsaenh.dll               |Microsoft Enhanced Cryptographic Provider          |6.1.7600.16385    |242936  |2009-07-14 01:17:56|C:\Windows\system32                                                                                          |
+|74F30000|CRYPTSP.dll              |Cryptographic Service Provider API                 |6.1.7600.16385    |78848   |2009-07-14 01:15:08|C:\Windows\system32                                                                                          |
+|75120000|sophos_detoured.dll      |Sophos Buffer Overrun Protection                   |10.2.10.4         |275352  |2013-11-14 10:15:28|C:\Program Files (x86)\Sophos\Sophos Anti-Virus                                                              |
+|75530000|CRYPTBASE.dll            |Base cryptographic API DLL                         |6.1.7600.16385    |36864   |2009-07-14 01:15:08|C:\Windows\syswow64                                                                                          |
+|75540000|SspiCli.dll              |Security Support Provider Interface                |6.1.7601.18270    |96768   |2013-09-25 01:58:18|C:\Windows\syswow64                                                                                          |
+|755A0000|WS2_32.dll               |Windows Socket 2.0 32-Bit DLL                      |6.1.7601.17514    |206848  |2010-11-21 03:23:56|C:\Windows\syswow64                                                                                          |
+|755E0000|MSCTF.dll                |MSCTF Server DLL                                   |6.1.7600.16385    |828928  |2009-07-14 01:15:44|C:\Windows\syswow64                                                                                          |
+|75740000|GDI32.dll                |GDI Client DLL                                     |6.1.7601.18275    |311808  |2013-10-03 02:00:46|C:\Windows\syswow64                                                                                          |
+|75800000|shell32.dll              |Windows Shell Common Dll                           |6.1.7601.18222    |12872704|2013-07-26 01:56:00|C:\Windows\syswow64                                                                                          |
+|76450000|WINTRUST.dll             |Microsoft Trust Verification APIs                  |6.1.7601.18205    |175104  |2013-07-09 04:52:12|C:\Windows\syswow64                                                                                          |
+|76480000|USP10.dll                |Uniscribe Unicode script processor                 |1.626.7601.18009  |626688  |2012-11-22 04:45:04|C:\Windows\syswow64                                                                                          |
+|76520000|USER32.dll               |Multi-User Windows USER API Client DLL             |6.1.7601.17514    |833024  |2010-11-21 03:24:22|C:\Windows\syswow64                                                                                          |
+|76620000|ole32.dll                |Microsoft OLE for Windows                          |6.1.7601.17514    |1414144 |2010-11-21 03:24:02|C:\Windows\syswow64                                                                                          |
+|76780000|IMM32.DLL                |Multi-User Windows IMM32 API Client DLL            |6.1.7601.17514    |119808  |2010-11-21 03:24:26|C:\Windows\system32                                                                                          |
+|767E0000|MSASN1.dll               |ASN.1 Runtime APIs                                 |6.1.7601.17514    |34304   |2010-11-21 03:23:50|C:\Windows\syswow64                                                                                          |
+|769D0000|LPK.dll                  |Language Pack                                      |6.1.7601.18177    |25600   |2013-06-06 04:57:02|C:\Windows\syswow64                                                                                          |
+|76B00000|oleaut32.dll             |                                                   |6.1.7601.17676    |571904  |2011-08-27 04:26:28|C:\Windows\syswow64                                                                                          |
+|76C00000|RPCRT4.dll               |Remote Procedure Call Runtime                      |6.1.7601.18205    |663552  |2013-07-09 04:52:34|C:\Windows\syswow64                                                                                          |
+|76CF0000|CLBCatQ.DLL              |COM+ Configuration Catalog                         |2001.12.8530.16385|522240  |2009-07-14 01:15:04|C:\Windows\syswow64                                                                                          |
+|76D80000|msvcrt.dll               |Windows NT CRT DLL                                 |7.0.7601.17744    |690688  |2011-12-16 07:53:00|C:\Windows\syswow64                                                                                          |
+|76E30000|ADVAPI32.dll             |Advanced Windows 32 Base API                       |6.1.7601.18247    |640512  |2013-08-29 01:48:18|C:\Windows\syswow64                                                                                          |
+|76F50000|sechost.dll              |Host for SCM/SDDL/LSA Lookup APIs                  |6.1.7600.16385    |92160   |2009-07-14 01:16:14|C:\Windows\SysWOW64                                                                                          |
+|76FC0000|KERNELBASE.dll           |Windows NT BASE API Client DLL                     |6.1.7601.18229    |274944  |2013-08-02 01:50:44|C:\Windows\syswow64                                                                                          |
+|77010000|kernel32.dll             |Windows NT BASE API Client DLL                     |6.1.7601.18229    |1114112 |2013-08-02 01:50:42|C:\Windows\syswow64                                                                                          |
+|77120000|CRYPT32.dll              |Crypto API32                                       |6.1.7601.18277    |1168384 |2013-10-05 19:57:26|C:\Windows\syswow64                                                                                          |
+|77360000|SHLWAPI.dll              |Shell Light-weight Utility Library                 |6.1.7601.17514    |350208  |2010-11-21 03:23:50|C:\Windows\syswow64                                                                                          |
+|773C0000|NSI.dll                  |NSI User-mode interface DLL                        |6.1.7600.16385    |8704    |2009-07-14 01:16:12|C:\Windows\syswow64                                                                                          |
+|77570000|imagehlp.dll             |Windows NT Image Helper                            |6.1.7601.18288    |159232  |2013-10-19 01:37:00|C:\Windows\syswow64                                                                                          |
+|77E30000|PSAPI.DLL                |Process Status Helper                              |6.1.7600.16385    |6144    |2009-07-14 01:16:14|C:\Windows\syswow64                                                                                          |
+|77E60000|ntdll.dll                |NT Layer DLL                                       |6.1.7601.18247    |1292192 |2013-08-29 01:50:32|C:\Windows\SysWOW64                                                                                          |
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Processes Information:
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|ID  |Name                     |Description                                       |Version        |Memory|Priority    |Threads|Path                                                                                       |
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|0   |[System Process]         |                                                  |               |0     |            |8      |                                                                                           |
+|4   |System                   |                                                  |               |0     |Normal      |190    |                                                                                           |
+|400 |atiesrxx.exe             |                                                  |               |0     |Normal      |6      |                                                                                           |
+|432 |smss.exe                 |                                                  |               |0     |Above-Normal|2      |                                                                                           |
+|476 |svchost.exe              |Host Process for Windows Services                 |6.1.7600.16385 |0     |Normal      |23     |                                                                                           |
+|600 |csrss.exe                |                                                  |               |0     |High        |9      |                                                                                           |
+|676 |wininit.exe              |Windows Start-Up Application                      |6.1.7600.16385 |0     |High        |3      |                                                                                           |
+|696 |csrss.exe                |                                                  |               |0     |High        |11     |                                                                                           |
+|740 |services.exe             |                                                  |               |0     |Normal      |8      |                                                                                           |
+|756 |lsass.exe                |                                                  |               |0     |Normal      |9      |                                                                                           |
+|764 |lsm.exe                  |                                                  |               |0     |Normal      |11     |                                                                                           |
+|820 |winlogon.exe             |                                                  |               |0     |High        |3      |                                                                                           |
+|912 |svchost.exe              |Host Process for Windows Services                 |6.1.7600.16385 |0     |Normal      |13     |                                                                                           |
+|992 |svchost.exe              |Host Process for Windows Services                 |6.1.7600.16385 |0     |Normal      |15     |                                                                                           |
+|1056|svchost.exe              |Host Process for Windows Services                 |6.1.7600.16385 |0     |Normal      |38     |                                                                                           |
+|1088|svchost.exe              |Host Process for Windows Services                 |6.1.7600.16385 |0     |Normal      |19     |                                                                                           |
+|1092|svchost.exe              |Host Process for Windows Services                 |6.1.7600.16385 |0     |Normal      |46     |                                                                                           |
+|1124|svchost.exe              |Host Process for Windows Services                 |6.1.7600.16385 |0     |Normal      |40     |                                                                                           |
+|1244|svchost.exe              |Host Process for Windows Services                 |6.1.7600.16385 |0     |Normal      |7      |                                                                                           |
+|1368|SavService.exe           |                                                  |               |0     |Normal      |59     |                                                                                           |
+|1392|atieclxx.exe             |                                                  |               |0     |Normal      |10     |                                                                                           |
+|1504|spoolsv.exe              |                                                  |               |0     |Normal      |16     |                                                                                           |
+|1852|svchost.exe              |Host Process for Windows Services                 |6.1.7600.16385 |0     |Normal      |23     |                                                                                           |
+|1900|SCFService.exe           |                                                  |               |0     |Normal      |12     |                                                                                           |
+|1992|SCFManager.exe           |                                                  |               |0     |Normal      |9      |                                                                                           |
+|2208|swi_service.exe          |                                                  |               |0     |Normal      |15     |                                                                                           |
+|2224|armsvc.exe               |                                                  |               |0     |Normal      |4      |                                                                                           |
+|2260|AERTSr64.exe             |                                                  |               |0     |Normal      |4      |                                                                                           |
+|2284|AdminService.exe         |                                                  |               |0     |Normal      |5      |                                                                                           |
+|2312|BSQLServer.exe           |BlackfishSQL Server Launcher                      |8.0.2804.9245  |0     |Normal      |6      |                                                                                           |
+|2384|HeciServer.exe           |Intel(R) Capability Licensing Service Interface   |1.23.219.2     |0     |Normal      |4      |                                                                                           |
+|2436|Jhi_service.exe          |Intel(R) Dynamic Application Loader Host Interface|8.0.0.1399     |0     |Normal      |4      |                                                                                           |
+|2468|svchost.exe              |Host Process for Windows Services                 |6.1.7600.16385 |0     |Normal      |4      |                                                                                           |
+|2492|osoausvc.exe             |                                                  |               |0     |Normal      |8      |                                                                                           |
+|2608|svchost.exe              |Host Process for Windows Services                 |6.1.7600.16385 |0     |Normal      |4      |                                                                                           |
+|2628|SAVAdminService.exe      |                                                  |               |0     |Normal      |5      |                                                                                           |
+|2696|ManagementAgentNT.exe    |                                                  |               |0     |Normal      |25     |                                                                                           |
+|2756|LMS.exe                  |                                                  |               |0     |Normal      |4      |                                                                                           |
+|2876|ALsvc.exe                |                                                  |               |0     |Normal      |8      |                                                                                           |
+|2924|RouterNT.exe             |                                                  |               |0     |Normal      |20     |                                                                                           |
+|2968|spa.exe                  |                                                  |               |0     |Normal      |9      |                                                                                           |
+|3020|swc_service.exe          |                                                  |               |0     |Normal      |6      |                                                                                           |
+|3064|svchost.exe              |Host Process for Windows Services                 |6.1.7600.16385 |0     |Normal      |6      |                                                                                           |
+|3076|vmnat.exe                |VMware NAT Service                                |6.5.3.8888     |0     |Normal      |5      |                                                                                           |
+|3124|Ath_CoexAgent.exe        |                                                  |               |0     |Normal      |7      |                                                                                           |
+|3168|Ath_WlanAgent.exe        |                                                  |               |0     |Real-Time   |5      |                                                                                           |
+|3348|svchost.exe              |Host Process for Windows Services                 |6.1.7600.16385 |0     |Normal      |5      |                                                                                           |
+|3352|svchost.exe              |Host Process for Windows Services                 |6.1.7600.16385 |0     |Normal      |6      |                                                                                           |
+|3388|vmnetdhcp.exe            |VMware VMnet DHCP service                         |6.5.3.8888     |0     |Normal      |3      |                                                                                           |
+|3828|SearchFilterHost.exe     |Microsoft Windows Search Filter Host              |7.0.7601.17610 |0     |Low         |6      |                                                                                           |
+|3932|dexplore.exe             |Microsoft Document Explorer                       |9.0.21022.8    |0     |Normal      |29     |C:\Program Files (x86)\Common Files\Microsoft Shared\Help 9                                |
+|3952|sdcservice.exe           |                                                  |               |0     |Normal      |9      |                                                                                           |
+|4192|WUDFHost.exe             |                                                  |               |0     |Normal      |8      |                                                                                           |
+|4264|taskhost.exe             |                                                  |               |0     |Normal      |11     |                                                                                           |
+|4452|dwm.exe                  |                                                  |               |0     |Normal      |3      |                                                                                           |
+|4540|iusb3mon.exe             |Intel(R) USB 3.0 Monitor                          |1.0.0.120      |0     |Normal      |4      |C:\Program Files (x86)\Intel\Intel(R) USB 3.0 eXtensible Host Controller Driver\Application|
+|4600|IAStorDataMgrSvc.exe     |                                                  |               |0     |Normal      |11     |                                                                                           |
+|4620|rundll32.exe             |Windows host process (Rundll32)                   |6.1.7600.16385 |0     |Normal      |3      |                                                                                           |
+|4672|explorer.exe             |Windows Explorer                                  |6.1.7601.17567 |0     |Normal      |79     |                                                                                           |
+|4812|PresentationFontCache.exe|                                                  |               |0     |Normal      |6      |                                                                                           |
+|4936|RtkNGUI64.exe            |                                                  |               |0     |Normal      |14     |                                                                                           |
+|4964|RAVBg64.exe              |                                                  |               |0     |Normal      |10     |                                                                                           |
+|5000|BtvStack.exe             |                                                  |               |0     |Normal      |76     |                                                                                           |
+|5028|AthBtTray.exe            |                                                  |               |0     |Normal      |17     |                                                                                           |
+|5176|osoupd.exe               |OSO Update                                        |4.0.0.18       |0     |Normal      |2      |C:\Program Files (x86)\CommunicationsClients                                               |
+|5192|MOM.exe                  |Catalyst Control Center: Monitoring program       |2.0.0.0        |0     |Normal      |15     |                                                                                           |
+|5332|vmware-tray.exe          |VMware Tray Process                               |6.5.3.8888     |0     |Normal      |2      |C:\Program Files (x86)\VMware\VMware Workstation                                           |
+|5356|TWCP.exe                 |TabletWorks Control Panel                         |10.9.0.24      |0     |Normal      |2      |C:\Program Files (x86)\GTCO CalComp\TabletWorks                                            |
+|5380|jusched.exe              |Java(TM) Update Scheduler                         |2.1.9.8        |0     |Normal      |2      |C:\Program Files (x86)\Common Files\Java\Java Update                                       |
+|5400|ALMon.exe                |Sophos Endpoint Security and Control              |3.47.115.344   |0     |Normal      |19     |C:\Program Files (x86)\Sophos\AutoUpdate                                                   |
+|5408|svchost.exe              |Host Process for Windows Services                 |6.1.7600.16385 |0     |Normal      |19     |                                                                                           |
+|5460|UNS.exe                  |                                                  |               |0     |Normal      |6      |                                                                                           |
+|5504|TSVNCache.exe            |TortoiseSVN status cache                          |1.7.10.23359   |0     |Normal      |18     |                                                                                           |
+|5740|svchost.exe              |Host Process for Windows Services                 |6.1.7600.16385 |0     |Normal      |14     |                                                                                           |
+|5760|CCC.exe                  |Catalyst Control Center: Host application         |3.5.0.0        |0     |Normal      |26     |                                                                                           |
+|5816|SearchIndexer.exe        |Microsoft Windows Search Indexer                  |7.0.7601.17610 |0     |Normal      |26     |                                                                                           |
+|6136|SearchProtocolHost.exe   |Microsoft Windows Search Protocol Host            |7.0.7601.17610 |0     |Low         |7      |                                                                                           |
+|6148|OUTLOOK.EXE              |Microsoft Outlook                                 |14.0.7113.5000 |0     |Normal      |77     |C:\Program Files (x86)\Microsoft Office\Office14                                           |
+|6168|jucheck.exe              |Java(TM) Update Checker                           |2.1.9.8        |0     |Normal      |6      |C:\Program Files (x86)\Common Files\Java\Java Update                                       |
+|6808|OSPPSVC.EXE              |                                                  |               |0     |Normal      |3      |                                                                                           |
+|7060|IAStorIcon.exe           |IAStorIcon                                        |11.1.0.1006    |0     |Normal      |13     |C:\Program Files (x86)\Intel\Intel(R) Rapid Storage Technology                             |
+|7100|dexplore.exe             |Microsoft Document Explorer                       |9.0.21022.8    |0     |Normal      |31     |C:\Program Files (x86)\Common Files\Microsoft Shared\Help 9                                |
+|7172|SATRASummUpgrade74to8.exe|                                                  |1.0.0.0        |0     |Normal      |7      |C:\Users\timh\Desktop\Source XE2\Products\SATRASumm\Upgrade74 to 8                         |
+|7740|UpdateCheck.exe          |Embarcadero RAD Studio Updator                    |16.0.4429.46931|0     |Normal      |4      |C:\ProgramData\Embarcadero\BDS\9.0                                                         |
+|8268|audiodg.exe              |                                                  |               |0     |Normal      |7      |                                                                                           |
+|8612|ads.exe                  |                                                  |               |0     |Normal      |79     |                                                                                           |
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Assembler Information:
+----------------------------------------------------------------------------
+; adsdata.RaiseError (Line=0 - Offset=0)
+; --------------------------------------
+005FCC69  lea     edx, [ebp+$FFFFFDA5]
+005FCC6F  mov     ecx, $00000259                    ; ''...
+005FCC74  call    System._UStrFromArray
+005FCC79  mov     eax, [ebp+$FFFFFDA0]
+005FCC7F  push    eax
+005FCC80  mov     eax, [ebp+$08]
+005FCC83  mov     ecx, [eax-$08]
+005FCC86  mov     dl, $01
+005FCC88  mov     eax, dword ptr [adsdata.adsdata]
+005FCC8D  call    adsdata.EADSDatabaseError.Create
+005FCC92  call    System._RaiseExcept               ; <-- EXCEPTION
+005FCC97  xor     eax, eax
+005FCC99  pop     edx
+005FCC9A  pop     ecx
+005FCC9B  pop     ecx
+005FCC9C  mov     fs:[eax], edx
+005FCC9F  push    $005FCCB7                         ; '‹å]ÃU‹ìƒÄø‰Uü‰Eøƒ}ü'
+005FCCA4  lea     eax, [ebp+$FFFFFDA0]
+005FCCAA  call    System._UStrClr
+005FCCAF  ret
+
+Registers:
+-----------------------------
+EAX: 0098CE60   EDI: 00000005
+EBX: 00000005   ESI: FFFFFFFF
+ECX: 005F7D00   ESP: 0018F114
+EDX: 005FCC97   EIP: 005FCC92
+
+Stack:               Memory Dump:
+------------------   ---------------------------------------------------------------------------
+0018F114: 0018F39C 00880010: E8 81 A5 E0 FF 33 C0 5A 59 59 64 89 10 68 B7 CC  .....3.ZYYd..h..
+0018F118: 004070F4 00880020: 5F 00 8D 85 A0 FD FF FF E8 71 AE E0 FF C3 E9 BF  _........q......
+0018F11C: 0018F380 00880030: A3 E0 FF EB ED 8B E5 5D C3 90 55 8B EC 83 C4 F8  .......]..U.....
+0018F120: 00000000 00880040: 89 55 FC 89 45 F8 83 7D FC 00 74 15 E8 A9 F4 E0  .U..E..}..t.....
+0018F124: 727245C9 00880050: FF 80 B8 B4 03 00 00 00 75 07 55 E8 3E FF FF FF  ........u.U.>...
+0018F128: 3720726F 00880060: 59 59 59 5D C3 90 55 8B EC 83 C4 F8 53 56 57 89  YYY]..U.....SVW.
+0018F12C: 3A373530 00880070: 4D F8 89 55 FC 8B F8 8B 45 FC E8 03 AF E0 FF 33  M..U....E......3
+0018F130: 68542020 00880080: C0 55 68 E9 CD 5F 00 64 FF 30 64 89 20 85 FF 7E  .Uh.._.d.0d. ..~
+0018F134: 65722065 00880090: 06 83 7D FC 00 75 0D 8B 45 F8 E8 FF AD E0 FF E9  ..}..u..E.......
+0018F138: 64726F63 008800A0: AD 00 00 00 83 FF 01 75 35 8B 55 FC B8 04 CE 5F  .......u5.U...._
+0018F13C: 64707520 008800B0: 00 E8 34 C4 E0 FF 8B D8 8B 45 FC 85 C0 74 05 83  ..4......E...t..
+0018F140: 20657461 008800C0: E8 04 8B 00 8D 55 FC 8B C8 8B C3 92 E8 B5 C2 E0  .....U..........
+0018F144: 6C696166 008800D0: FF 8B 45 F8 8B 55 FC E8 A2 B1 E0 FF EB 73 33 DB  ..E..U.......s3.
+0018F148: 202E6465 008800E0: BE 01 00 00 00 3B FE 7E 23 8B 55 FC B8 04 CE 5F  .....;.~#.U...._
+0018F14C: 65685420 008800F0: 00 E8 F4 C3 E0 FF 8B D8 8D 45 FC 8B CB BA 01 00  .........E......
+0018F150: 79656B20 00880100: 00 00 E8 7F C2 E0 FF 46 3B FE 7F DD 85 DB 75 0A  .......F;.....u.
+
+
+

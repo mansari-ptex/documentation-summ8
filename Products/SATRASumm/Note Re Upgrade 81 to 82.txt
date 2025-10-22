@@ -1,0 +1,15 @@
+Use tool in Delphi2007 source
+
+Summs7AutoPress
+
+to show if there are any Summs 7 parts which have AutoPress set.
+
+This could be done in Summs 8 but no point in doing so if its never used. Need to run the above at the 
+remaining companies that still have Summs 7 and use cutting times and only do that extra piece of work 
+should it be necesary. We would need to add the ability to choose amn Auto Press noting that this option 
+is NOT valid for summs 8 cutting times.
+
+Note that AT PRESENT the CutUtils_Summs7 has the presstype ignored in BOTH Leather and Synthetic procedures 
+in CutUtils_Summs7
+
+Note: Term "Punches" in Summs same repleced by term "Peels" in Summs 8.

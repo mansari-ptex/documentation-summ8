@@ -1,0 +1,679 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{444fc2a9-c165-42c9-9688-38cab2c36c94}</ProjectGuid>
+        <MainSource>SATRASumm8.dpr</MainSource>
+        <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+        <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+        <DCC_DependencyCheckOutputName>..\Out\SSumm7.exe</DCC_DependencyCheckOutputName>
+        <FrameworkType>VCL</FrameworkType>
+        <ProjectVersion>15.3</ProjectVersion>
+        <Base>True</Base>
+        <Config Condition="'$(Config)'==''">Release</Config>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <TargetedPlatforms>3</TargetedPlatforms>
+        <AppType>Application</AppType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
+        <Base_Win64>true</Base_Win64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
+        <Cfg_1_Win32>true</Cfg_1_Win32>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win64)'!=''">
+        <Cfg_1_Win64>true</Cfg_1_Win64>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
+        <Cfg_2_Win32>true</Cfg_2_Win32>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win64)'!=''">
+        <Cfg_2_Win64>true</Cfg_2_Win64>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <VerInfo_Build>6</VerInfo_Build>
+        <VerInfo_Release>1</VerInfo_Release>
+        <DCC_UsePackage>rtl;xmlrtl;dbrtl;$(DCC_UsePackage)</DCC_UsePackage>
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <VerInfo_MajorVer>8</VerInfo_MajorVer>
+        <DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;Winapi;FMXTee.Editor;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Locale>2057</VerInfo_Locale>
+        <VerInfo_Keys>CompanyName=SATRA;FileDescription=SatraSumm;FileVersion=8.0.1.6;InternalName=SATRASumm8;LegalCopyright=;LegalTrademarks=;OriginalFilename=SATRASumm8;ProductName=SATRASumm8;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <Icon_MainIcon>..\Associated\Images\SATRASumm.ico</Icon_MainIcon>
+        <DCC_UsePackage>vcl;vclactnband;vclx;ALED;CiaComPort;DCP;GradBtn;Ruler;Tabload;TLights;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_Namespace>System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win64)'!=''">
+        <Icon_MainIcon>..\Associated\Images\SATRASumm.ico</Icon_MainIcon>
+        <DCC_UsePackage>vcl;vclactnband;vclx;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_Namespace>System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <Icon_MainIcon>..\Associated\Images\SATRASumm.ico</Icon_MainIcon>
+        <Version>7.0</Version>
+        <DCC_AssertionsAtRuntime>False</DCC_AssertionsAtRuntime>
+        <DCC_WriteableConstants>True</DCC_WriteableConstants>
+        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+        <DCC_MapFile>3</DCC_MapFile>
+        <DCC_ExeOutput>..\Out</DCC_ExeOutput>
+        <DCC_DcuOutput>..\DCUs</DCC_DcuOutput>
+        <DCC_ObjOutput>..\DCUs</DCC_ObjOutput>
+        <DCC_HppOutput>..\DCUs</DCC_HppOutput>
+        <DCC_UnitSearchPath>..\..\Common\Obj;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <DCC_ResourcePath>..\..\Common\Obj;$(DCC_ResourcePath)</DCC_ResourcePath>
+        <DCC_ObjPath>..\..\Common\Obj;$(DCC_ObjPath)</DCC_ObjPath>
+        <DCC_IncludePath>..\..\Common\Obj;$(DCC_IncludePath)</DCC_IncludePath>
+        <DCC_Define>SATRASUMM;RELEASE;$(DCC_Define)</DCC_Define>
+        <DCC_UNSAFE_TYPE>True</DCC_UNSAFE_TYPE>
+        <DCC_UNSAFE_CODE>True</DCC_UNSAFE_CODE>
+        <DCC_UNSAFE_CAST>True</DCC_UNSAFE_CAST>
+        <DCC_LocalDebugSymbols>False</DCC_LocalDebugSymbols>
+        <DCC_GenerateStackFrames>True</DCC_GenerateStackFrames>
+        <DCC_RangeChecking>True</DCC_RangeChecking>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+        <DCC_ObjOutput>..\DCUs32</DCC_ObjOutput>
+        <DCC_ExeOutput>..\Out32</DCC_ExeOutput>
+        <DCC_HppOutput>..\DCUs32</DCC_HppOutput>
+        <DCC_DcuOutput>..\DCUs32</DCC_DcuOutput>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
+        <DCC_ObjOutput>..\DCUs64</DCC_ObjOutput>
+        <DCC_HppOutput>..\DCUs64</DCC_HppOutput>
+        <DCC_ExeOutput>..\Out64</DCC_ExeOutput>
+        <DCC_DcuOutput>..\DCUs64</DCC_DcuOutput>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <Version>7.0</Version>
+        <DCC_WriteableConstants>True</DCC_WriteableConstants>
+        <DCC_ExeOutput>..\Out</DCC_ExeOutput>
+        <DCC_DcuOutput>..\DCUs</DCC_DcuOutput>
+        <DCC_ObjOutput>..\DCUs</DCC_ObjOutput>
+        <DCC_HppOutput>..\DCUs</DCC_HppOutput>
+        <DCC_UnitSearchPath>$(BDS)\lib\Debug;$(BDS)\Lib\Debug\Indy10;$(BDS)\RaveReports\Lib;..\..\Common\Obj;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <DCC_ResourcePath>$(BDS)\lib\Debug;$(BDS)\Lib\Debug\Indy10;$(BDS)\RaveReports\Lib;..\..\Common\Obj;$(DCC_ResourcePath)</DCC_ResourcePath>
+        <DCC_ObjPath>$(BDS)\lib\Debug;$(BDS)\Lib\Debug\Indy10;$(BDS)\RaveReports\Lib;..\..\Common\Obj;$(DCC_ObjPath)</DCC_ObjPath>
+        <DCC_IncludePath>$(BDS)\lib\Debug;$(BDS)\Lib\Debug\Indy10;$(BDS)\RaveReports\Lib;..\..\Common\Obj;$(DCC_IncludePath)</DCC_IncludePath>
+        <DCC_Define>DEBUG;DEBUGFULL;SATRASUMM;$(DCC_Define)</DCC_Define>
+        <DCC_UNSAFE_TYPE>True</DCC_UNSAFE_TYPE>
+        <DCC_UNSAFE_CODE>True</DCC_UNSAFE_CODE>
+        <DCC_UNSAFE_CAST>True</DCC_UNSAFE_CAST>
+        <DCC_SymbolReferenceInfo>2</DCC_SymbolReferenceInfo>
+        <DCC_Optimize>False</DCC_Optimize>
+        <DCC_GenerateStackFrames>True</DCC_GenerateStackFrames>
+        <DCC_MapFile>3</DCC_MapFile>
+        <DCC_RangeChecking>True</DCC_RangeChecking>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+        <ILINK_FullDebugInfo>true</ILINK_FullDebugInfo>
+        <DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
+        <BCC_DebugLineNumbers>true</BCC_DebugLineNumbers>
+        <BCC_SourceDebuggingOn>true</BCC_SourceDebuggingOn>
+        <DCC_ObjOutput>..\DCUs32</DCC_ObjOutput>
+        <DCC_ExeOutput>..\Out32</DCC_ExeOutput>
+        <DCC_HppOutput>..\DCUs32</DCC_HppOutput>
+        <DCC_DcuOutput>..\DCUs32</DCC_DcuOutput>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
+        <DCC_ObjOutput>..\DCUs64</DCC_ObjOutput>
+        <DCC_HppOutput>..\DCUs64</DCC_HppOutput>
+        <DCC_ExeOutput>..\Out64</DCC_ExeOutput>
+        <DCC_DcuOutput>..\DCUs64</DCC_DcuOutput>
+    </PropertyGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType>VCLApplication</Borland.ProjectType>
+        <BorlandProject>
+            <Delphi.Personality>
+                <Parameters>
+                    <Parameters Name="UseLauncher">False</Parameters>
+                    <Parameters Name="LoadAllSymbols">True</Parameters>
+                    <Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
+                </Parameters>
+                <VersionInfo>
+                    <VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+                    <VersionInfo Name="AutoIncBuild">False</VersionInfo>
+                    <VersionInfo Name="MajorVer">7</VersionInfo>
+                    <VersionInfo Name="MinorVer">4</VersionInfo>
+                    <VersionInfo Name="Release">0</VersionInfo>
+                    <VersionInfo Name="Build">2</VersionInfo>
+                    <VersionInfo Name="Debug">False</VersionInfo>
+                    <VersionInfo Name="PreRelease">False</VersionInfo>
+                    <VersionInfo Name="Special">False</VersionInfo>
+                    <VersionInfo Name="Private">False</VersionInfo>
+                    <VersionInfo Name="DLL">False</VersionInfo>
+                    <VersionInfo Name="Locale">2057</VersionInfo>
+                    <VersionInfo Name="CodePage">1252</VersionInfo>
+                </VersionInfo>
+                <VersionInfoKeys>
+                    <VersionInfoKeys Name="CompanyName">SATRA</VersionInfoKeys>
+                    <VersionInfoKeys Name="FileDescription">SatraSumm</VersionInfoKeys>
+                    <VersionInfoKeys Name="FileVersion">7.4.0.2</VersionInfoKeys>
+                    <VersionInfoKeys Name="InternalName">SUMMS7</VersionInfoKeys>
+                    <VersionInfoKeys Name="LegalCopyright"/>
+                    <VersionInfoKeys Name="LegalTrademarks"/>
+                    <VersionInfoKeys Name="OriginalFilename">SSumm7</VersionInfoKeys>
+                    <VersionInfoKeys Name="ProductName">SUMMS7</VersionInfoKeys>
+                    <VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+                    <VersionInfoKeys Name="Comments"/>
+                </VersionInfoKeys>
+                <Source>
+                    <Source Name="MainSource">SATRASumm8.dpr</Source>
+                </Source>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k190.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp190.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                </Excluded_Packages>
+            </Delphi.Personality>
+            <ModelSupport>False</ModelSupport>
+            <Platforms>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">True</Platform>
+            </Platforms>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets"/>
+    <ItemGroup>
+        <DelphiCompile Include="$(MainSource)">
+            <MainSource>MainSource</MainSource>
+        </DelphiCompile>
+        <DCCReference Include="Summs.pas">
+            <Form>fmSumms</Form>
+        </DCCReference>
+        <DCCReference Include="Splash.pas">
+            <Form>fmSplashScreen</Form>
+        </DCCReference>
+        <DCCReference Include="MaterialDetails.pas">
+            <Form>fmMaterialDetails</Form>
+        </DCCReference>
+        <DCCReference Include="AllParts.pas">
+            <Form>fmAllParts</Form>
+        </DCCReference>
+        <DCCReference Include="AllConstructions.pas">
+            <Form>fmAllConstructions</Form>
+        </DCCReference>
+        <DCCReference Include="ConstructionDetails.pas">
+            <Form>fmConstructionDetails</Form>
+        </DCCReference>
+        <DCCReference Include="AllKnifeSets.pas">
+            <Form>fmAllKnifeSets</Form>
+        </DCCReference>
+        <DCCReference Include="OpenTicket.pas">
+            <Form>fmOpenTicket</Form>
+        </DCCReference>
+        <DCCReference Include="AllSizeRelationships.pas">
+            <Form>fmAllSizeRelationships</Form>
+        </DCCReference>
+        <DCCReference Include="AllSizeRanges.pas">
+            <Form>fmAllSizeRanges</Form>
+        </DCCReference>
+        <DCCReference Include="AllSizeScales.pas">
+            <Form>fmAllSizeScales</Form>
+        </DCCReference>
+        <DCCReference Include="AllWidthRanges.pas">
+            <Form>fmAllWidthRanges</Form>
+        </DCCReference>
+        <DCCReference Include="About.pas">
+            <Form>fmAboutBox</Form>
+        </DCCReference>
+        <DCCReference Include="CutterNames.pas">
+            <Form>fmCutterNames</Form>
+        </DCCReference>
+        <DCCReference Include="AllSuppliers.pas">
+            <Form>fmAllSuppliers</Form>
+        </DCCReference>
+        <DCCReference Include="NewWidthRange.pas">
+            <Form>fmNewWidthRange</Form>
+        </DCCReference>
+        <DCCReference Include="OpenWidthRange.pas">
+            <Form>fmOpenWidthRange</Form>
+        </DCCReference>
+        <DCCReference Include="WidthDetails.pas">
+            <Form>fmWidthDetails</Form>
+        </DCCReference>
+        <DCCReference Include="KnivesToSwap.pas">
+            <Form>fmKnivesToSwap</Form>
+        </DCCReference>
+        <DCCReference Include="SizeRangeDetails.pas">
+            <Form>fmSizeRangeDetails</Form>
+        </DCCReference>
+        <DCCReference Include="OpenSizeRange.pas">
+            <Form>fmOpenSizeRange</Form>
+        </DCCReference>
+        <DCCReference Include="OpenKnife.pas">
+            <Form>fmOpenKnife</Form>
+        </DCCReference>
+        <DCCReference Include="KnifeSetDetails.pas">
+            <Form>fmKnifeSetDetails</Form>
+        </DCCReference>
+        <DCCReference Include="OpenSizeReln.pas">
+            <Form>fmOpenSizeRelationship</Form>
+        </DCCReference>
+        <DCCReference Include="OpenSizeScale.pas">
+            <Form>fmOpenSizeScale</Form>
+        </DCCReference>
+        <DCCReference Include="NewSizeScale.pas">
+            <Form>fmNewSizeScale</Form>
+        </DCCReference>
+        <DCCReference Include="ChangePassword.pas">
+            <Form>fmChangePassword</Form>
+        </DCCReference>
+        <DCCReference Include="NewMaterial.pas">
+            <Form>fmNewMaterial</Form>
+        </DCCReference>
+        <DCCReference Include="NewPart.pas">
+            <Form>fmNewPart</Form>
+        </DCCReference>
+        <DCCReference Include="NewConstruction.pas">
+            <Form>fmNewConstruction</Form>
+        </DCCReference>
+        <DCCReference Include="NewSupplier.pas">
+            <Form>fmNewSupplier</Form>
+        </DCCReference>
+        <DCCReference Include="NewTicket.pas">
+            <Form>fmNewTicket</Form>
+        </DCCReference>
+        <DCCReference Include="OpenMaterial.pas">
+            <Form>fmOpenMaterial</Form>
+        </DCCReference>
+        <DCCReference Include="OpenPart.pas">
+            <Form>fmOpenPart</Form>
+        </DCCReference>
+        <DCCReference Include="OpenConstruction.pas">
+            <Form>fmOpenConstruction</Form>
+        </DCCReference>
+        <DCCReference Include="OpenSupplier.pas">
+            <Form>fmOpenSupplier</Form>
+        </DCCReference>
+        <DCCReference Include="SizeScaleDetails.pas">
+            <Form>fmSizeScaleDetails</Form>
+        </DCCReference>
+        <DCCReference Include="SizeRelationshipDetails.pas">
+            <Form>fmSizeRelationshipDetails</Form>
+        </DCCReference>
+        <DCCReference Include="SizeScaleWhereUsed.pas">
+            <Form>fmSizeScaleWhereUsed</Form>
+        </DCCReference>
+        <DCCReference Include="SizeRangeWhereUsed.pas">
+            <Form>fmSizeRangeWhereUsed</Form>
+        </DCCReference>
+        <DCCReference Include="SizeRelationshipWhereUsed.pas">
+            <Form>fmSizeRelationshipWhereUsed</Form>
+        </DCCReference>
+        <DCCReference Include="SupplierDetails.pas">
+            <Form>fmSupplierDetails</Form>
+        </DCCReference>
+        <DCCReference Include="SuppliersWhereUsed.pas">
+            <Form>fmSupplierWhereUsed</Form>
+        </DCCReference>
+        <DCCReference Include="MaterialsWhereUsed.pas">
+            <Form>fmMaterialWhereUsed</Form>
+        </DCCReference>
+        <DCCReference Include="KnivesWhereUsed.pas">
+            <Form>fmKnivesWhereUsed</Form>
+        </DCCReference>
+        <DCCReference Include="NewKnifeSet.pas">
+            <Form>fmNewKnifeSet</Form>
+        </DCCReference>
+        <DCCReference Include="PartsWhereUsed.pas">
+            <Form>fmPartsWhereUsed</Form>
+        </DCCReference>
+        <DCCReference Include="WidthRangeWhereUsed.pas">
+            <Form>fmWidthRangeWhereUsed</Form>
+        </DCCReference>
+        <DCCReference Include="BrowseSizeRanges.pas">
+            <Form>fmBrowseSizeRanges</Form>
+        </DCCReference>
+        <DCCReference Include="BrowseSizeRelationships.pas">
+            <Form>fmBrowseSizeRelationships</Form>
+        </DCCReference>
+        <DCCReference Include="BrowseWidthRanges.pas">
+            <Form>fmBrowseWidthRanges</Form>
+        </DCCReference>
+        <DCCReference Include="BrowseKnives.pas">
+            <Form>fmBrowseKnives</Form>
+        </DCCReference>
+        <DCCReference Include="ImportKnife.pas">
+            <Form>fmKnifeImport</Form>
+        </DCCReference>
+        <DCCReference Include="MatDflts.pas">
+            <Form>fmMaterialDefaults</Form>
+        </DCCReference>
+        <DCCReference Include="Basicalw.pas">
+            <Form>dmBasAll</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="PartAllowance.pas">
+            <Form>fmPartAllowance</Form>
+        </DCCReference>
+        <DCCReference Include="PartDetails.pas">
+            <Form>fmPartDetails</Form>
+        </DCCReference>
+        <DCCReference Include="BrowseSizeScales.pas">
+            <Form>fmBrowseSizeScales</Form>
+        </DCCReference>
+        <DCCReference Include="Analyse.pas">
+            <Form>fmAnalyse</Form>
+        </DCCReference>
+        <DCCReference Include="Adjfact.pas">
+            <Form>dmAdjFact</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="CopyKnife.pas">
+            <Form>fmCopyKnife</Form>
+        </DCCReference>
+        <DCCReference Include="CopyPart.pas">
+            <Form>fmCopyPart</Form>
+        </DCCReference>
+        <DCCReference Include="CopyMaterial.pas">
+            <Form>fmCopyMaterial</Form>
+        </DCCReference>
+        <DCCReference Include="CopyConstruction.pas">
+            <Form>fmCopyConstruction</Form>
+        </DCCReference>
+        <DCCReference Include="CopySizeRange.pas">
+            <Form>fmCopySizeRange</Form>
+        </DCCReference>
+        <DCCReference Include="CopySizeReln.pas">
+            <Form>fmCopySizeRelationship</Form>
+        </DCCReference>
+        <DCCReference Include="CopyWidthRange.pas">
+            <Form>fmCopyWidthRange</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\Common\Cututils.pas">
+            <Form>dmCutUtils</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\Common\Cmntypes.pas"/>
+        <DCCReference Include="Times2.pas">
+            <Form>dmTimes2</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="SummsVars.pas"/>
+        <DCCReference Include="..\..\Common\General.pas"/>
+        <DCCReference Include="ExternalIn.pas">
+            <Form>fmExternalIn</Form>
+        </DCCReference>
+        <DCCReference Include="SMRate.pas">
+            <Form>fmSMRateTable</Form>
+        </DCCReference>
+        <DCCReference Include="Audit.pas">
+            <Form>fmAudit</Form>
+        </DCCReference>
+        <DCCReference Include="AllCosts.pas">
+            <Form>fmAllCosts</Form>
+        </DCCReference>
+        <DCCReference Include="TktUpdate.pas">
+            <Form>fmTicketUpdate</Form>
+        </DCCReference>
+        <DCCReference Include="TktBlkUp.pas">
+            <Form>fmTicketBulkUpdate</Form>
+        </DCCReference>
+        <DCCReference Include="TicketsNotUpdated.pas">
+            <Form>fmTicketsNotUpdated</Form>
+        </DCCReference>
+        <DCCReference Include="SwapKnvs.pas">
+            <Form>fmSwapKnives</Form>
+        </DCCReference>
+        <DCCReference Include="NewSizeRange.pas">
+            <Form>fmNewSizeRange</Form>
+        </DCCReference>
+        <DCCReference Include="BrowseMaterials.pas">
+            <Form>fmBrowseMaterials</Form>
+        </DCCReference>
+        <DCCReference Include="SyntheticTicketsList.pas">
+            <Form>fmSyntheticTicketsList</Form>
+        </DCCReference>
+        <DCCReference Include="ConstructionAllowance.pas">
+            <Form>fmConstructionAllowance</Form>
+        </DCCReference>
+        <DCCReference Include="NewStyle.pas">
+            <Form>fmNewStyle</Form>
+        </DCCReference>
+        <DCCReference Include="StyleDetails.pas">
+            <Form>fmStyleDetails</Form>
+        </DCCReference>
+        <DCCReference Include="OpenStyle.pas">
+            <Form>fmOpenStyle</Form>
+        </DCCReference>
+        <DCCReference Include="AllStyles.pas">
+            <Form>fmAllStyles</Form>
+        </DCCReference>
+        <DCCReference Include="BrowseStyles.pas">
+            <Form>fmBrowseStyles</Form>
+        </DCCReference>
+        <DCCReference Include="StylesWhereUsed.pas">
+            <Form>fmStylesWhereUsed</Form>
+        </DCCReference>
+        <DCCReference Include="CopyStyle.pas">
+            <Form>fmCopyStyle</Form>
+        </DCCReference>
+        <DCCReference Include="SystemStatus.pas">
+            <Form>fmSystemStatus</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\Common\DirBrowse.pas">
+            <Form>fmBrowseDirectories</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\Common\OutOfMemory.pas">
+            <Form>fmMemoryError</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\Common\AdvErrorHandler.pas">
+            <Form>fmErrorHandler</Form>
+        </DCCReference>
+        <DCCReference Include="KnifeDefaults.pas">
+            <Form>fmKnifeDefaults</Form>
+        </DCCReference>
+        <DCCReference Include="SummsThreads.pas"/>
+        <DCCReference Include="CopyPartWidthKnives.pas">
+            <Form>fmCopyPartWidthKnives</Form>
+        </DCCReference>
+        <DCCReference Include="TicketsBreakdown.pas">
+            <Form>fmTicketsBreakdown</Form>
+        </DCCReference>
+        <DCCReference Include="CopyTicket.pas">
+            <Form>fmCopyTicket</Form>
+        </DCCReference>
+        <DCCReference Include="TicketsGroupError.pas">
+            <Form>fmTicketsGroupError</Form>
+        </DCCReference>
+        <DCCReference Include="CutterLocations.pas">
+            <Form>fmCutterLocations</Form>
+        </DCCReference>
+        <DCCReference Include="Times.pas">
+            <Form>dmTimes</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\Common\CutUtils2.pas">
+            <Form>dmCutUtils2</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="TktBlkUpErrors.pas">
+            <Form>fmTicketBulkUpdateErrors</Form>
+        </DCCReference>
+        <DCCReference Include="NewSizeReln.pas">
+            <Form>fmNewSizeRelationship</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\Common\CancelPrinting.pas">
+            <Form>fmCancelPrinting</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\Common\LockedDialog.pas">
+            <Form>fmLockedDialog</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\Common\AccessDenied.pas">
+            <Form>fmAccessDenied</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\Common\CmnVars.pas"/>
+        <DCCReference Include="WidthNames.pas">
+            <Form>fmWidthNames</Form>
+        </DCCReference>
+        <DCCReference Include="AllTickets.pas">
+            <Form>fmAllTickets</Form>
+        </DCCReference>
+        <DCCReference Include="TicketsGroupCreate.pas">
+            <Form>fmTicketsGroupCreate</Form>
+        </DCCReference>
+        <DCCReference Include="ImportTimeLineElements.pas">
+            <Form>fmImportTimeLineElements</Form>
+        </DCCReference>
+        <DCCReference Include="Interlocking\KnifeSpinner.pas">
+            <Form>fmKnifeSpinner</Form>
+        </DCCReference>
+        <DCCReference Include="Interlocking\AllPatterns.pas">
+            <Form>fmAllPatterns</Form>
+        </DCCReference>
+        <DCCReference Include="Interlocking\General_Interlocking.pas"/>
+        <DCCReference Include="Interlocking\FastGEO.pas"/>
+        <DCCReference Include="Interlocking\Interlocking.pas"/>
+        <DCCReference Include="Interlocking\Expansion.pas"/>
+        <DCCReference Include="Interlocking\ConvexHull.pas"/>
+        <DCCReference Include="Interlocking\PolygonOverlaps.pas"/>
+        <DCCReference Include="Interlocking\Debugger.pas">
+            <Form>fmDebugger</Form>
+        </DCCReference>
+        <DCCReference Include="Interlocking\Results.pas"/>
+        <DCCReference Include="Interlocking\Merge.pas"/>
+        <DCCReference Include="Interlocking\PlanIt.pas"/>
+        <DCCReference Include="Interlocking\Concavities.pas"/>
+        <DCCReference Include="Layplanning.pas"/>
+        <DCCReference Include="SelectKnifeSize.pas">
+            <Form>fmSelectKnifeSize</Form>
+        </DCCReference>
+        <DCCReference Include="Interlocking\AllLayplansWithoutSelection.pas">
+            <Form>fmAllLayplansWithoutSelection</Form>
+        </DCCReference>
+        <DCCReference Include="Interlocking\Const_Interlocking.pas"/>
+        <DCCReference Include="Interlocking\AllSyntheticMaterials.pas">
+            <Form>fmAllSyntheticMaterials</Form>
+        </DCCReference>
+        <DCCReference Include="AllMaterials.pas">
+            <Form>fmAllMaterials</Form>
+        </DCCReference>
+        <DCCReference Include="BulkAssessKnives.pas">
+            <Form>fmAssessKnives</Form>
+        </DCCReference>
+        <DCCReference Include="PatternDrawing.pas">
+            <Form>dmPatternDrawing</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="LegacyCheck.pas">
+            <Form>fmLegacyCheck</Form>
+        </DCCReference>
+        <DCCReference Include="Filt.pas"/>
+        <DCCReference Include="ManualKnifeCheck.pas">
+            <Form>fmManualKnifeCheck</Form>
+        </DCCReference>
+        <DCCReference Include="KnifeInterlock.pas">
+            <Form>fmKnifeOrInterlock</Form>
+        </DCCReference>
+        <DCCReference Include="Interlocking\BulkLayplan.pas">
+            <Form>fmBulkLayplan</Form>
+        </DCCReference>
+        <DCCReference Include="Interlocking\AllLayplans.pas">
+            <Form>fmAllLayplans</Form>
+        </DCCReference>
+        <DCCReference Include="Interlocking\LayMain.pas">
+            <Form>fmLayplan</Form>
+        </DCCReference>
+        <DCCReference Include="Interlocking\Edges.pas"/>
+        <DCCReference Include="..\..\Common\Dongle_Green.pas"/>
+        <DCCReference Include="..\..\Common\DongleChange_Green.pas">
+            <Form>fmDongleChangeGreen</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\Common\DongleInfo_Green.pas">
+            <Form>fmDongleInformationGreen</Form>
+        </DCCReference>
+        <DCCReference Include="fr_MaterialSummary.pas">
+            <Form>fmfrMaterialSummary</Form>
+        </DCCReference>
+        <DCCReference Include="ConstructionsWhereUsed.pas">
+            <Form>fmConstructionsWhereUsed</Form>
+        </DCCReference>
+        <DCCReference Include="fr_Ticket.pas">
+            <Form>fmfrTicket</Form>
+        </DCCReference>
+        <DCCReference Include="TotalReport.pas">
+            <Form>dmTotalReport</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Features.pas">
+            <Form>fmFeatures</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\..\Common\PrintExports.pas">
+            <Form>fmPrintExports</Form>
+        </DCCReference>
+        <DCCReference Include="ParamGeneral.pas">
+            <Form>fmParametersGeneral</Form>
+        </DCCReference>
+        <DCCReference Include="ExternalInDM.pas">
+            <Form>ExternalInDM1</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="TicketsAllDM.pas">
+            <Form>dmTicketsAll</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <Import Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')" Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj"/>
+</Project>
+
+<!-- EurekaLog First Line
+[Exception Log]
+EurekaLog Version=7007
+Activate=0
+atVCL=1
+DeleteMapAfterCompile=0
+Encrypt Password=""
+idEurekaLog=1
+idEurekaLogDetailed=1
+idMSClassic=1
+idStepsToReproduce=1
+ProjectID="{432CE79A-450C-4D7A-990D-F69C48D92E2F}"
+EurekaLog Last Line -->

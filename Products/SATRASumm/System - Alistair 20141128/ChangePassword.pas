@@ -1,0 +1,112 @@
+unit ChangePassword;
+
+interface
+
+uses
+  Classes, Controls, Forms, StdCtrls, Mask, Buttons, ExtCtrls, ComCtrls,
+  ToolWin, Data.DB,   FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client, FDQueryPlus, FDTablePlus;
+
+type
+  TfmChangePassword = class(TForm)
+    tbMain: TPanel;
+    btnSave: TSpeedButton;
+    btnCancel: TSpeedButton;
+    pnlMain: TPanel;
+    lblOld: TLabel;
+    lblNew: TLabel;
+    lblVerify: TLabel;
+    edtVerify: TMaskEdit;
+    edtNew: TMaskEdit;
+    edtOld: TMaskEdit;
+    qPassword: TFDQueryPlus;
+    procedure btnCancelClick(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
+    procedure eAnyKeyDown(Sender: TObject;
+      var Key: Word; Shift: TShiftState);
+    procedure FormShow(Sender: TObject);
+    procedure btnSaveClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  fmChangePassword: TfmChangePassword;
+
+implementation
+
+uses
+  Windows, Dialogs, General, Summs, CmnVars, SysUtils,
+  AdvErrorHandler, SummsVars;
+
+{$R *.DFM}
+
+procedure TfmChangePassword.btnCancelClick(Sender: TObject);
+begin
+  Close;
+end;
+
+procedure TfmChangePassword.FormActivate(Sender: TObject);
+begin
+  edtOld.text := '';
+  edtNew.text := '';
+  edtVerify.text := '';
+  edtOld.SetFocus;
+  edtOld.SelectAll;
+end;
+
+procedure TfmChangePassword.eAnyKeyDown(
+  Sender: TObject; var Key: Word; Shift: TShiftState);
+begin
+  if Key = VK_RETURN then
+    btnSave.Click
+  else if Key = VK_ESCAPE then
+    btnCancel.Click;
+end;
+
+procedure TfmChangePassword.FormShow(Sender: TObject);
+var
+  Form: TForm;
+
+begin
+  Form := (Sender as TForm);
+
+  Form.left := (Screen.Width div 2) - (Form.Width div 2);
+  Form.top := (Screen.Height div 2) - (Form.Height div 2);
+end;
+
+procedure TfmChangePassword.btnSaveClick(Sender: TObject);
+var
+  l: integer;
+  tryPassword: AnsiString;
+
+begin
+  if edtOld.text <> SystemPassword then
+    messagedlg('Password NOT changed - Old Password incorrect', mtInformation, [mbOk], 0)
+  else if edtNew.text <> edtVerify.text then
+    messagedlg('Password NOT changed - Verify does not match', mtInformation, [mbOk], 0)
+  else
+    try
+      tryPassword := edtNew.text;
+      l := length(tryPassword) + 1;
+
+      qPassword.ParamByName('OldPassword').Value := SystemPassword;
+      qPassword.ParamByName('NewPassword').Value := TryPassword;
+      qPassword.ExecSQL;
+
+      SystemPassword := tryPassword;
+      close;
+    except
+      on E: Exception do
+        fmErrorHandler.DebugMessageDlg('Operation could not be performed', E.Message, '');
+    end;
+end;
+
+procedure TfmChangePassword.FormCreate(Sender: TObject);
+begin
+  AutoColor(Self);
+end;
+
+end.
