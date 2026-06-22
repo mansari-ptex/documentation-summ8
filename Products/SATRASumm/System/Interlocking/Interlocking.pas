@@ -3,6 +3,21 @@ unit Interlocking;
 interface
 
 //{$DEFINE DEBUGFULL}
+//This is used for calculating coordinates of the nested pieces.
+// Uses polygon overlap algorithms from PolygonOverlaps.pas
+// Uses fast point in polygon and line segment intersection algorithms from FastGEO.pas
+// Uses edge algorithms from Edges.pas
+// Uses convex hull algorithms from ConvexHull.pas
+// Uses interlocking constants from Const_Interlocking.pas
+// Uses general interlocking algorithms from General_Interlocking.pas
+// Uses expansion algorithms from Expansion.pas
+// Uses classes from Classes.pas
+// Uses forms from Forms.pas
+// Uses graphics from Graphics.pas
+// Uses math from Math.pas
+// Uses types from Types.pas
+// Uses SysUtils from SysUtils.pas
+// Uses Windows from Windows.pas
 
 uses Windows, SysUtils, Types, Math, Graphics, ExtCtrls, Forms, Expansion,
      Classes, ConvexHull, PolygonOverlaps, Const_Interlocking,
